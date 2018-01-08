@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
+using System.Security.Cryptography;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -37,14 +39,29 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKeyDown("left shift") || Input.GetKeyDown("right shift"))
         {
-            SwitchWorld();
+            Transform ground;
+            if (CanSwitch(out ground))
+            {
+                Debug.Log("Try Switch");
+                SwitchWorld(ground);
+            }
         }
 
         //calls the jump method
-        if (Input.GetKeyDown("space") && IsGrounded(0)){
+        if (Input.GetKeyDown("space") && IsGrounded()){
             Jump();
         }
-		
+	    
+	    //Jump Ray
+	    
+	    Vector3 pos1 = new Vector3(transform.position.x - 0.3f, transform.position.y + 0.7f*-worldMod);
+	    Vector3 pos2 = new Vector3(transform.position.x + 0.3f, transform.position.y + 0.7f*-worldMod);
+	    
+	    Debug.DrawRay(pos1, Vector3.down*0.1f*worldMod, Color.green);
+	    Debug.DrawRay(pos2, Vector3.down*0.1f*worldMod, Color.green);
+	    
+		//Switch Ray
+	    //Debug.DrawRay(transform.position, Vector3.down*0.8f*worldMod, Color.blue);
 	}
 
     private void FixedUpdate()
@@ -74,40 +91,80 @@ public class PlayerController : MonoBehaviour {
     }
 
     //checks to see if the sprite is grounded
-    bool IsGrounded(int typ)
+    private bool IsGrounded()
     {
-        Vector2 dir = new Vector2(0, -worldMod);
+        Vector2 dir = new Vector2(0, -worldMod); //points the Ray from her feet
 
         //Raycast from both left and right side of sprite
-        Vector3 oriLeft = new Vector3(transform.position.x - 0.2f, transform.position.y);
-        Vector3 oriRight = new Vector3(transform.position.x + 0.2f, transform.position.y);
+        Vector3 oriLeft = new Vector3(transform.position.x - 0.3f, transform.position.y + 0.7f*-worldMod);
+        Vector3 oriRight = new Vector3(transform.position.x + 0.3f, transform.position.y + 0.7f*-worldMod);
 
-        RaycastHit2D hitLeft = Physics2D.Raycast(oriLeft, dir, 5.0f, groundLayer);
-        RaycastHit2D hitRight = Physics2D.Raycast(oriRight, dir, 5.0f, groundLayer);
+        RaycastHit2D hitLeft = Physics2D.Raycast(oriLeft, dir, 0.1f);
+        RaycastHit2D hitRight = Physics2D.Raycast(oriRight, dir, 0.1f);
 
-        if (typ == 0)
+        if (hitLeft.collider != null || hitRight.collider != null)
         {
-            if (_RB.IsTouching(hitLeft.collider) || _RB.IsTouching(hitRight.collider)) //IMPORTANT: Needs case for null reference
-            {
-                //Debug.Log("True");
-                return true;
-            }
-            //Debug.Log("False");
-            return false;
-        }
-        else if (typ == 1)
-        {
-
+            //Debug.Log("true");
+            return true;
         }
         
-        //Notifies if function is given incorrect variable
-        Debug.Log("Value of variable \"typ\" is invalid.");
+        //Debug.Log("false");
         return false;
+    }
+
+    private bool CanSwitch(out Transform ground)
+    {
+        Vector2 dir = new Vector2(0, -worldMod);
+        Vector3 origin = new Vector3(transform.position.x, transform.position.y + 0.8f*-worldMod);
+
+        //RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, 0.8f, groundLayer);
+        RaycastHit2D hit = Physics2D.Raycast(origin, dir, 0.8f);
+        Debug.Log(hit.distance);
+
+        /*
+        ground = hit.transform;
+        Debug.Log(ground.position.x);
+        Debug.Log(ground.position.y);
+        Debug.Log(ground.position.z);
+        */
+        
+        if (hit.collider != null)
+        {
+            ground = hit.transform;
+            return true;
+        }
+        
+        ground = null;
+        return false;
+        
+        /*
+        Debug.Log("Hit Left Distance: " + hitLeft.distance);
+        Debug.Log("Hit Right Distance: " + hitRight.distance);
+        
+        if (hitLeft.distance <= 1.0f)
+        {
+            ground = hitLeft.transform;
+            Debug.Log("Left Hit");
+            return true;
+        } 
+        else if (hitRight.distance <= 1.0f)
+        {
+            ground = hitRight.transform;
+            Debug.Log("Right Hit");
+            return true;
+        }
+        else
+        {
+            ground = null;
+            Debug.Log("No Hit");
+            return false;
+        }
+        */
     }
 
 
     //Switches the girl between worlds, then flips gravity so she doesn't fall off into space.
-    private void SwitchWorld()
+    private void SwitchWorld(Transform ground)
     {
         if (Time.time >= nextSwitch)
         {
@@ -115,7 +172,7 @@ public class PlayerController : MonoBehaviour {
 
             _RB.transform.localScale = new Vector3(_RB.transform.localScale.x, -(_RB.transform.localScale.y), _RB.transform.localScale.z);
 
-            _RB.transform.position = new Vector3(_RB.transform.position.x, -(_RB.transform.position.y), _RB.transform.position.z);
+            _RB.transform.position = new Vector3(_RB.transform.position.x, -worldMod*(ground.position.y + worldMod), _RB.transform.position.z); //Fix this.
 
             _RB.velocity = new Vector2(_RB.velocity.x, -(_RB.velocity.y));
 

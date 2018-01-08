@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="caf14b10-e7c2-4bb0-8fd6-6e536881ee0a" name="Default" comment="" />
+    <list default="true" id="ad90ee3a-4455-4b65-bee8-2471091a3187" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.GD48_TeamWeirderStuff_Suenos/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.GD48_TeamWeirderStuff_Suenos/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.GD48_TeamWeirderStuff_Suenos/riderModule.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.GD48_TeamWeirderStuff_Suenos1/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.GD48_TeamWeirderStuff_Suenos1/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scenes/Suenos_V01.unity" afterPath="$PROJECT_DIR$/Assets/Scenes/Suenos_V01.unity" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,16 +21,31 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GameController.cs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameController.cs">
+      <file leaf-file-name="PlayerController.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="681">
+              <caret line="174" column="155" lean-forward="false" selection-start-line="174" selection-start-column="155" selection-end-line="174" selection-end-column="155" />
               <folding>
-                <marker date="1515305319477" expanded="true" signature="6:78" ph="..." />
-                <marker date="1515305319477" expanded="true" signature="124:245" ph="{...}" />
-                <marker date="1515305319477" expanded="true" signature="174:181" ph="{...}" />
-                <marker date="1515305319477" expanded="true" signature="236:243" ph="{...}" />
+                <marker date="1515410102585" expanded="false" signature="6:146" ph="..." />
+                <marker date="1515410102585" expanded="true" signature="315:5468" ph="{...}" />
+                <marker date="1515410102585" expanded="true" signature="733:889" ph="{...}" />
+                <marker date="1515410102585" expanded="true" signature="944:1815" ph="{...}" />
+                <marker date="1515410102585" expanded="true" signature="1025:1220" ph="{...}" />
+                <marker date="1515410102585" expanded="true" signature="1104:1210" ph="{...}" />
+                <marker date="1515410102585" expanded="true" signature="1308:1339" ph="{...}" />
+                <marker date="1515410102585" expanded="true" signature="1718:1812" ph="/* Switch Ray ... */" />
+                <marker date="1515410102585" expanded="true" signature="1847:1940" ph="{...}" />
+                <marker date="1515410102585" expanded="false" signature="1998:2091" ph="{...}" />
+                <marker date="1515410102585" expanded="false" signature="2134:2540" ph="{...}" />
+                <marker date="1515410102585" expanded="true" signature="2617:3333" ph="{...}" />
+                <marker date="1515410102585" expanded="true" signature="3188:3266" ph="{...}" />
+                <marker date="1515410102585" expanded="true" signature="3383:4689" ph="{...}" />
+                <marker date="1515410102585" expanded="true" signature="3738:3897" ph="/* ground = hit.transform; ... */" />
+                <marker date="1515410102585" expanded="true" signature="3940:4021" ph="{...}" />
+                <marker date="1515410102585" expanded="true" signature="4093:4683" ph="/* Debug.Log(&quot;Hit Left Distance: &quot; + hitLeft.distance); ... */" />
+                <marker date="1515410102585" expanded="true" signature="4833:5466" ph="{...}" />
+                <marker date="1515410102585" expanded="true" signature="4876:5445" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -29,8 +53,18 @@
       </file>
     </leaf>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -44,7 +78,6 @@
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="SolutionExplorer" proportions="" version="1">
       <flattenPackages />
@@ -68,33 +101,7 @@
               <option name="myItemType" value="com.jetbrains.rider.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="GD48_TeamWeirderStuff_Suenos1 (1 project)" />
-              <option name="myItemType" value="com.jetbrains.rider.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GD48_TeamWeirderStuff_Suenos" />
-              <option name="myItemType" value="com.jetbrains.rider.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assets" />
-              <option name="myItemType" value="com.jetbrains.rider.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Scripts" />
-              <option name="myItemType" value="com.jetbrains.rider.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.rider.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GD48_TeamWeirderStuff_Suenos1 (1 project)" />
-              <option name="myItemType" value="com.jetbrains.rider.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GD48_TeamWeirderStuff_Suenos" />
+              <option name="myItemId" value="GD48_TeamWeirderStuff_Suenos (2 projects)" />
               <option name="myItemType" value="com.jetbrains.rider.projectView.solutionExplorer.SolutionExplorerNodeRider" />
             </PATH_ELEMENT>
           </PATH>
@@ -133,7 +140,49 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
     <configuration default="true" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
       <method />
     </configuration>
     <configuration default="false" name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug">
@@ -148,17 +197,17 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="caf14b10-e7c2-4bb0-8fd6-6e536881ee0a" name="Default" comment="" />
-      <created>1515306382175</created>
+      <changelist id="ad90ee3a-4455-4b65-bee8-2471091a3187" name="Default" comment="" />
+      <created>1515370126528</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1515306382175</updated>
-      <workItem from="1515306388683" duration="955000" />
+      <updated>1515370126528</updated>
+      <workItem from="1515370144336" duration="17148000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="955000" />
+    <option name="totallyTimeSpent" value="17148000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -171,20 +220,21 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17760417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -205,15 +255,30 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameController.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="681">
+          <caret line="174" column="155" lean-forward="false" selection-start-line="174" selection-start-column="155" selection-end-line="174" selection-end-column="155" />
           <folding>
-            <marker date="1515305319477" expanded="true" signature="6:78" ph="..." />
-            <marker date="1515305319477" expanded="true" signature="124:245" ph="{...}" />
-            <marker date="1515305319477" expanded="true" signature="174:181" ph="{...}" />
-            <marker date="1515305319477" expanded="true" signature="236:243" ph="{...}" />
+            <marker date="1515410102585" expanded="false" signature="6:146" ph="..." />
+            <marker date="1515410102585" expanded="true" signature="315:5468" ph="{...}" />
+            <marker date="1515410102585" expanded="true" signature="733:889" ph="{...}" />
+            <marker date="1515410102585" expanded="true" signature="944:1815" ph="{...}" />
+            <marker date="1515410102585" expanded="true" signature="1025:1220" ph="{...}" />
+            <marker date="1515410102585" expanded="true" signature="1104:1210" ph="{...}" />
+            <marker date="1515410102585" expanded="true" signature="1308:1339" ph="{...}" />
+            <marker date="1515410102585" expanded="true" signature="1718:1812" ph="/* Switch Ray ... */" />
+            <marker date="1515410102585" expanded="true" signature="1847:1940" ph="{...}" />
+            <marker date="1515410102585" expanded="false" signature="1998:2091" ph="{...}" />
+            <marker date="1515410102585" expanded="false" signature="2134:2540" ph="{...}" />
+            <marker date="1515410102585" expanded="true" signature="2617:3333" ph="{...}" />
+            <marker date="1515410102585" expanded="true" signature="3188:3266" ph="{...}" />
+            <marker date="1515410102585" expanded="true" signature="3383:4689" ph="{...}" />
+            <marker date="1515410102585" expanded="true" signature="3738:3897" ph="/* ground = hit.transform; ... */" />
+            <marker date="1515410102585" expanded="true" signature="3940:4021" ph="{...}" />
+            <marker date="1515410102585" expanded="true" signature="4093:4683" ph="/* Debug.Log(&quot;Hit Left Distance: &quot; + hitLeft.distance); ... */" />
+            <marker date="1515410102585" expanded="true" signature="4833:5466" ph="{...}" />
+            <marker date="1515410102585" expanded="true" signature="4876:5445" ph="{...}" />
           </folding>
         </state>
       </provider>
