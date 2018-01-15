@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetKeyDown("left shift") || Input.GetKeyDown("right shift"))
+        if (Input.GetKey("left shift") || Input.GetKey("right shift"))
         {
             Transform ground;
             if (CanSwitch(out ground))
@@ -59,9 +59,10 @@ public class PlayerController : MonoBehaviour {
 	    
 	    Debug.DrawRay(pos1, Vector3.down*0.1f*worldMod, Color.green);
 	    Debug.DrawRay(pos2, Vector3.down*0.1f*worldMod, Color.green);
-	    
-		//Switch Ray
-	    //Debug.DrawRay(transform.position, Vector3.down*0.8f*worldMod, Color.blue);
+
+        //Switch Ray
+        Vector3 swiPos = new Vector3(transform.position.x, transform.position.y + 0.9f * -worldMod);
+	    Debug.DrawRay(swiPos, Vector3.down*1.3f*worldMod, Color.blue);
 	}
 
     private void FixedUpdate()
@@ -115,11 +116,20 @@ public class PlayerController : MonoBehaviour {
     private bool CanSwitch(out Transform ground)
     {
         Vector2 dir = new Vector2(0, -worldMod);
-        Vector3 origin = new Vector3(transform.position.x, transform.position.y + 0.8f*-worldMod);
 
-        //RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, 0.8f, groundLayer);
-        RaycastHit2D hit = Physics2D.Raycast(origin, dir, 0.8f);
-        Debug.Log(hit.distance);
+        Vector3 origin = new Vector3(transform.position.x, transform.position.y + 0.8f * -worldMod);
+
+        Vector3 oriLeft = new Vector3(transform.position.x - 0.5f, transform.position.y + 0.9f * -worldMod);
+        Vector3 oriRight = new Vector3(transform.position.x + 0.5f, transform.position.y + 0.9f * -worldMod);
+
+        RaycastHit2D groundCaster = Physics2D.Raycast(origin, dir, 0.1f);
+
+        //Ensures that the player cannot switch and end up in some geo in the other world
+        RaycastHit2D hitLeft = Physics2D.Raycast(oriLeft, dir, 1.3f);
+        RaycastHit2D hitRight = Physics2D.Raycast(oriLeft, dir, 1.3f);
+        
+
+
 
         /*
         ground = hit.transform;
@@ -128,9 +138,9 @@ public class PlayerController : MonoBehaviour {
         Debug.Log(ground.position.z);
         */
         
-        if (hit.collider != null)
+        if (hitLeft.collider == null && hitRight.collider == null && IsGrounded())
         {
-            ground = hit.transform;
+            ground = groundCaster.transform;
             return true;
         }
         
@@ -174,7 +184,7 @@ public class PlayerController : MonoBehaviour {
 
             _RB.transform.position = new Vector3(_RB.transform.position.x, -worldMod*(ground.position.y + worldMod), _RB.transform.position.z); //Fix this.
 
-            _RB.velocity = new Vector2(_RB.velocity.x, -(_RB.velocity.y));
+            //_RB.velocity = new Vector2(_RB.velocity.x, -(_RB.velocity.y));
 
             _RB.gravityScale *= -1; 
 
