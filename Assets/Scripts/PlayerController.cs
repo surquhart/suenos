@@ -12,7 +12,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public float moveSpeed;
-    public float jumpSpeed;
+    public float jumpVert;
+    public float jumpHoz;
     public float switchCoolTime;
     public float nextSwitch = 0.0f;
     public float animSpeed;
@@ -71,16 +72,23 @@ public class PlayerController : MonoBehaviour {
 	}
 
     private void FixedUpdate()
-    {
-        float h = Input.GetAxis("Horizontal");
-        MoveHoz(h);              
+    {        
+        if (IsGrounded())
+        {
+            float h = Input.GetAxis("Horizontal");
+            MoveHoz(h);
+        }                      
     }
 
     // causes the sprite to jump
+    
     private void Jump()
     {
-        _RB.velocity = new Vector2(_RB.velocity.x, jumpSpeed*worldMod);         
+        _RB.velocity += new Vector2(jumpHoz, 0);
+        _RB.velocity += new Vector2(0, jumpVert * worldMod);
+        
     }
+    
 
     private void MoveHoz(float direction)
     {
