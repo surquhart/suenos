@@ -6,12 +6,11 @@ public class CameraController : MonoBehaviour {
 
     [SerializeField]
     private float zoom;
+	
     private Vector3 offset;
+    private float pedestal = 0.0f;
 
-    [HideInInspector]
-    public float pedestal = 0.0f;
-
-    public GameObject player;
+    public PlayerController player;
     
 
 	// Use this for initialization
@@ -21,7 +20,9 @@ public class CameraController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void LateUpdate () {
-        transform.position = player.transform.position + offset;
+	void LateUpdate ()
+	{
+		Vector3 pos = new Vector3(offset.x, offset.y*player.WorldMod, offset.z*zoom);
+        transform.position = player.transform.position + pos;
 	}
 }

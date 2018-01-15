@@ -17,8 +17,8 @@ public class PlayerController : MonoBehaviour {
     public float nextSwitch = 0.0f;
     public float animSpeed;
 
-    [HideInInspector]
-    public int worldMod; //pos or neg integer value that changes physics based in each world.
+    
+    private int worldMod; //pos or neg integer value that changes physics based in each world.
 
     public LayerMask groundLayer;
 
@@ -56,15 +56,18 @@ public class PlayerController : MonoBehaviour {
 	    
 	    //Jump Ray
 	    
-	    Vector3 pos1 = new Vector3(transform.position.x - 0.3f, transform.position.y + 0.7f*-worldMod);
-	    Vector3 pos2 = new Vector3(transform.position.x + 0.3f, transform.position.y + 0.7f*-worldMod);
+	    Vector3 pos1 = new Vector3(transform.position.x - 0.3f, transform.position.y + 0.61f*-worldMod);
+	    Vector3 pos2 = new Vector3(transform.position.x + 0.3f, transform.position.y + 0.61f*-worldMod);
 	    
-	    Debug.DrawRay(pos1, Vector3.down*0.1f*worldMod, Color.green);
-	    Debug.DrawRay(pos2, Vector3.down*0.1f*worldMod, Color.green);
+	    Debug.DrawRay(pos1, Vector3.down*0.15f*worldMod, Color.green);
+	    Debug.DrawRay(pos2, Vector3.down*0.15f*worldMod, Color.green);
 
         //Switch Ray
-        Vector3 swiPos = new Vector3(transform.position.x, transform.position.y + 0.775f * -worldMod);
+        Vector3 swiPos = new Vector3(transform.position.x, transform.position.y + 0.975f * -worldMod);
 	    Debug.DrawRay(swiPos, Vector3.down*1.3f*worldMod, Color.blue);
+	    
+	    Vector3 swiGround = new Vector3(transform.position.x, transform.position.y + 0.725f*-worldMod);
+	    Debug.DrawRay(swiGround, Vector3.down*0.2f*worldMod, Color.red);
 	}
 
     private void FixedUpdate()
@@ -99,11 +102,11 @@ public class PlayerController : MonoBehaviour {
         Vector2 dir = new Vector2(0, -worldMod); //points the Ray from her feet
 
         //Raycast from both left and right side of sprite
-        Vector3 oriLeft = new Vector3(transform.position.x - 0.3f, transform.position.y + 0.7f*-worldMod);
-        Vector3 oriRight = new Vector3(transform.position.x + 0.3f, transform.position.y + 0.7f*-worldMod);
+        Vector3 oriLeft = new Vector3(transform.position.x - 0.3f, transform.position.y + 0.61f*-worldMod);
+        Vector3 oriRight = new Vector3(transform.position.x + 0.3f, transform.position.y + 0.61f*-worldMod);
 
-        RaycastHit2D hitLeft = Physics2D.Raycast(oriLeft, dir, 0.1f);
-        RaycastHit2D hitRight = Physics2D.Raycast(oriRight, dir, 0.1f);
+        RaycastHit2D hitLeft = Physics2D.Raycast(oriLeft, dir, 0.15f);
+        RaycastHit2D hitRight = Physics2D.Raycast(oriRight, dir, 0.15f);
 
         if (hitLeft.collider != null || hitRight.collider != null)
         {
@@ -119,19 +122,21 @@ public class PlayerController : MonoBehaviour {
     {
         Vector2 dir = new Vector2(0, -worldMod);
 
-        Vector3 origin = new Vector3(transform.position.x, transform.position.y + 0.8f * -worldMod);
+        Vector3 originCent = new Vector3(transform.position.x, transform.position.y + 0.725f*-worldMod);
 
-        Vector3 oriLeft = new Vector3(transform.position.x - 0.5f, transform.position.y + 0.775f * -worldMod);
-        Vector3 oriRight = new Vector3(transform.position.x + 0.5f, transform.position.y + 0.775f * -worldMod);
+        Vector3 oriLeft = new Vector3(transform.position.x - 0.5f, transform.position.y + 0.975f * -worldMod);
+        Vector3 oriRight = new Vector3(transform.position.x + 0.5f, transform.position.y + 0.975f * -worldMod);
         
         //Older raycast. Gets grounf type. Keep in case of teleport switching
         //RaycastHit2D groundCaster = Physics2D.Raycast(origin, dir, 0.1f);
+
+        RaycastHit2D hitCent = Physics2D.Raycast(originCent, dir, 0.2f);
 
         //Ensures that the player cannot switch and end up in some geo in the other world
         RaycastHit2D hitLeft = Physics2D.Raycast(oriLeft, dir, 1.3f);
         RaycastHit2D hitRight = Physics2D.Raycast(oriRight, dir, 1.3f);
         
-        if (hitLeft.collider == null && hitRight.collider == null && IsGrounded())
+        if (hitLeft.collider == null && hitRight.collider == null && hitCent.collider != null)
         {
             
             //ground = groundCaster.transform;
@@ -151,7 +156,7 @@ public class PlayerController : MonoBehaviour {
 
             _RB.transform.localScale = new Vector3(_RB.transform.localScale.x, -(_RB.transform.localScale.y), _RB.transform.localScale.z);
 
-            _RB.transform.position = new Vector3(_RB.transform.position.x, transform.position.y + worldMod, _RB.transform.position.z); //Fix this.
+            _RB.transform.position = new Vector3(_RB.transform.position.x, transform.position.y + worldMod*1.25f, _RB.transform.position.z); //Fix this.
 
             //_RB.velocity = new Vector2(_RB.velocity.x, -(_RB.velocity.y));
 
@@ -169,5 +174,11 @@ public class PlayerController : MonoBehaviour {
 
             nextSwitch = Time.time + switchCoolTime; //cooldown before the switch ability can be used again.
         }               
+    }
+    
+    public int WorldMod
+    {
+        get { return worldMod; }
+        //set { worldMod = value; }
     }
 }
