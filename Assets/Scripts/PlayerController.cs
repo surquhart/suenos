@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour {
     public float jumpSpeed;
     public float switchCoolTime;
     public float nextSwitch = 0.0f;
+    public float animSpeed;
 
     [HideInInspector]
     public int worldMod; //pos or neg integer value that changes physics based in each world.
@@ -39,11 +40,12 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKey("left shift") || Input.GetKey("right shift"))
         {
-            Transform ground;
-            if (CanSwitch(out ground))
+            
+            //Transform ground;
+            if (CanSwitch())
             {
-                Debug.Log("Try Switch");
-                SwitchWorld(ground);
+                //Debug.Log("Try Switch");
+                SwitchWorld();
             }
         }
 
@@ -61,7 +63,7 @@ public class PlayerController : MonoBehaviour {
 	    Debug.DrawRay(pos2, Vector3.down*0.1f*worldMod, Color.green);
 
         //Switch Ray
-        Vector3 swiPos = new Vector3(transform.position.x, transform.position.y + 0.9f * -worldMod);
+        Vector3 swiPos = new Vector3(transform.position.x, transform.position.y + 0.775f * -worldMod);
 	    Debug.DrawRay(swiPos, Vector3.down*1.3f*worldMod, Color.blue);
 	}
 
@@ -87,7 +89,7 @@ public class PlayerController : MonoBehaviour {
         _RB.velocity = new Vector2(moveSpeed * direction, _RB.velocity.y);
 
         
-        _AN.SetFloat("Velocity", Mathf.Abs(_RB.velocity.x)*0.5f); //Animation speed scales with velocity
+        _AN.SetFloat("Velocity", Mathf.Abs(_RB.velocity.x)*(animSpeed/10)); //Animation speed scales with velocity
                
     }
 
@@ -113,68 +115,35 @@ public class PlayerController : MonoBehaviour {
         return false;
     }
 
-    private bool CanSwitch(out Transform ground)
+    private bool CanSwitch()
     {
         Vector2 dir = new Vector2(0, -worldMod);
 
         Vector3 origin = new Vector3(transform.position.x, transform.position.y + 0.8f * -worldMod);
 
-        Vector3 oriLeft = new Vector3(transform.position.x - 0.5f, transform.position.y + 0.9f * -worldMod);
-        Vector3 oriRight = new Vector3(transform.position.x + 0.5f, transform.position.y + 0.9f * -worldMod);
-
-        RaycastHit2D groundCaster = Physics2D.Raycast(origin, dir, 0.1f);
+        Vector3 oriLeft = new Vector3(transform.position.x - 0.5f, transform.position.y + 0.775f * -worldMod);
+        Vector3 oriRight = new Vector3(transform.position.x + 0.5f, transform.position.y + 0.775f * -worldMod);
+        
+        //Older raycast. Gets grounf type. Keep in case of teleport switching
+        //RaycastHit2D groundCaster = Physics2D.Raycast(origin, dir, 0.1f);
 
         //Ensures that the player cannot switch and end up in some geo in the other world
         RaycastHit2D hitLeft = Physics2D.Raycast(oriLeft, dir, 1.3f);
-        RaycastHit2D hitRight = Physics2D.Raycast(oriLeft, dir, 1.3f);
-        
-
-
-
-        /*
-        ground = hit.transform;
-        Debug.Log(ground.position.x);
-        Debug.Log(ground.position.y);
-        Debug.Log(ground.position.z);
-        */
+        RaycastHit2D hitRight = Physics2D.Raycast(oriRight, dir, 1.3f);
         
         if (hitLeft.collider == null && hitRight.collider == null && IsGrounded())
         {
-            ground = groundCaster.transform;
+            
+            //ground = groundCaster.transform;
             return true;
         }
-        
-        ground = null;
+
         return false;
-        
-        /*
-        Debug.Log("Hit Left Distance: " + hitLeft.distance);
-        Debug.Log("Hit Right Distance: " + hitRight.distance);
-        
-        if (hitLeft.distance <= 1.0f)
-        {
-            ground = hitLeft.transform;
-            Debug.Log("Left Hit");
-            return true;
-        } 
-        else if (hitRight.distance <= 1.0f)
-        {
-            ground = hitRight.transform;
-            Debug.Log("Right Hit");
-            return true;
-        }
-        else
-        {
-            ground = null;
-            Debug.Log("No Hit");
-            return false;
-        }
-        */
     }
 
 
     //Switches the girl between worlds, then flips gravity so she doesn't fall off into space.
-    private void SwitchWorld(Transform ground)
+    private void SwitchWorld()
     {
         if (Time.time >= nextSwitch)
         {
@@ -182,9 +151,19 @@ public class PlayerController : MonoBehaviour {
 
             _RB.transform.localScale = new Vector3(_RB.transform.localScale.x, -(_RB.transform.localScale.y), _RB.transform.localScale.z);
 
-            _RB.transform.position = new Vector3(_RB.transform.position.x, -worldMod*(ground.position.y + worldMod), _RB.transform.position.z); //Fix this.
+            _RB.transform.position = new Vector3(_RB.transform.position.x, transform.position.y + worldMod, _RB.transform.position.z); //Fix this.
 
             //_RB.velocity = new Vector2(_RB.velocity.x, -(_RB.velocity.y));
+
+            if (worldMod == 1)
+            {
+                _SR.color = Color.black;
+            }
+            else
+            {
+                _SR.color = Color.white;
+            }
+            
 
             _RB.gravityScale *= -1; 
 
