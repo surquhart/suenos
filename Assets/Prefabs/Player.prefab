@@ -107,12 +107,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e1254ffdb580da4bbb7e4b5e55e3e00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 2.5
   jumpVert: 4
   jumpHoz: 4
   switchCoolTime: 2
   nextSwitch: 0
-  worldMod: 0
+  animSpeed: 3.5
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -151,7 +151,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f97d4601c466e424a829da0e882c5703, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

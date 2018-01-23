@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour {
     public float nextSwitch = 0.0f;
     public float animSpeed;
 
-    
+    private bool interacting; //boolean that returns if the player is pressing X
     private int worldMod; //pos or neg integer value that changes physics based in each world.
 
     public LayerMask groundLayer;
@@ -50,6 +50,12 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
+        
+        if (Input.GetKey("x"))
+        {
+            //USE PLAYER INPUT
+        }
+
         //calls the jump method
         if (Input.GetKeyDown("space") && IsGrounded()){
             Jump();
@@ -73,19 +79,18 @@ public class PlayerController : MonoBehaviour {
 
     private void FixedUpdate()
     {        
-        if (IsGrounded())
-        {
-            float h = Input.GetAxis("Horizontal");
-            MoveHoz(h);
-        }                      
+        
+         float h = Input.GetAxis("Horizontal");
+         MoveHoz(h);
+                             
     }
 
     // causes the sprite to jump
     
     private void Jump()
     {
-        _RB.velocity += new Vector2(jumpHoz, 0);
         _RB.velocity += new Vector2(0, jumpVert * worldMod);
+        //_RB.velocity += new Vector2(0, jumpVert * worldMod);
         
     }
     
@@ -188,5 +193,10 @@ public class PlayerController : MonoBehaviour {
     {
         get { return worldMod; }
         //set { worldMod = value; }
+    }
+
+    public bool Interacting
+    {
+        get { return interacting; }
     }
 }
