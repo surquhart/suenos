@@ -9,5 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Suenos_MainMenu.unity
     guid: 9dd5e85e0f1363041a797571e663d158
   - enabled: 1
-    path: Assets/Scenes/Suenos_V04.unity
-    guid: b1e9637f9af8f404b8d1001881e9adb3
+    path: Assets/Scenes/Suenos_V05.unity
+    guid: 52d94da6dfe5cd745a2fbaab278b5e36
+  - enabled: 1
+    path: Assets/Scenes/Suenos_GameOver.unity
+    guid: ecb8605324c765f4fb86e4f64af4145a
