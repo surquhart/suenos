@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50481135697950956}
   - component: {fileID: 82859117446928922}
   - component: {fileID: 114585334615220034}
+  - component: {fileID: 114190978890531924}
   m_Layer: 9
   m_Name: Crate
   m_TagString: Untagged
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1593663480806640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.49, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -73,10 +74,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.00055742264}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -87,7 +88,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.99888515}
   m_EdgeRadius: 0
 --- !u!82 &82859117446928922
 AudioSource:
@@ -169,6 +170,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114190978890531924
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1593663480806640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c988edb36266e00409a76daa87281d34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114585334615220034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -181,9 +193,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomizedSounds:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 1f9e4bacdbf8c3a41aac0c92e4046340, type: 3}
+  - {fileID: 8300000, guid: 94c6862b44ae95c43acbf496c79a6c31, type: 3}
 --- !u!212 &212521179683024502
 SpriteRenderer:
   m_ObjectHideFlags: 1
