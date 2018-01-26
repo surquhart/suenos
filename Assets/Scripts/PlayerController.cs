@@ -5,36 +5,18 @@ using System.Net;
 using System.Security.Cryptography;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(SpriteRenderer))]
-[RequireComponent(typeof(Animator))]
 
-public class PlayerController : MonoBehaviour {
 
-    public float moveSpeed;
+public class PlayerController : BaseUnit {
+
+    
     public float jumpVert;
     public float jumpHoz;
     public float switchCoolTime;
     public float nextSwitch = 0.0f;
-    public float animSpeed;
-
+    
     private bool interacting; //boolean that returns if the player is pressing X
-    private int worldMod; //pos or neg integer value that changes physics based in each world.
-
-    public LayerMask groundLayer;
-
-    private Rigidbody2D _RB;
-    private SpriteRenderer _SR;
-    private Animator _AN;
-         
-	// Fetch all components
-	void Start () {
-        _RB = GetComponent<Rigidbody2D>();
-        _SR = GetComponent<SpriteRenderer>();
-        _AN = GetComponent<Animator>();
-
-        worldMod = 1;
-	}
+    
 	
 	// Update is called once per frame
 	void Update () {
@@ -92,21 +74,6 @@ public class PlayerController : MonoBehaviour {
         _RB.velocity += new Vector2(0, jumpVert * worldMod);
         //_RB.velocity += new Vector2(0, jumpVert * worldMod);
         
-    }
-    
-
-    private void MoveHoz(float direction)
-    {
-        //Flips the orientation of the sprite
-        if (direction < 0) _SR.flipX = true;
-        else if (direction > 0) _SR.flipX = false;        
-
-        //apply velocity so it moves
-        _RB.velocity = new Vector2(moveSpeed * direction, _RB.velocity.y);
-
-        
-        _AN.SetFloat("Velocity", Mathf.Abs(_RB.velocity.x)*(animSpeed/10)); //Animation speed scales with velocity
-               
     }
 
     //checks to see if the sprite is grounded
@@ -189,12 +156,6 @@ public class PlayerController : MonoBehaviour {
         }               
     }
     
-    public int WorldMod
-    {
-        get { return worldMod; }
-        //set { worldMod = value; }
-    }
-
     public bool Interacting
     {
         get { return interacting; }
