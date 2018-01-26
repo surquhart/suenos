@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour {
+public class EnemyController : BaseUnit {
 
-    public float moveSpeed;
+    
 
     public GameObject EnemyPath;
 
     private float dir;
-
-    private Rigidbody2D _RB;
-    private SpriteRenderer _SR;
-    private Animator _AN;
 
     // Use this for initialization
     void Start () {
