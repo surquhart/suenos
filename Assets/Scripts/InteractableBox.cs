@@ -19,6 +19,8 @@ public class InteractableBox : MonoBehaviour {
         capL = (CapsuleCollider2D)components[0];
         capR = (CapsuleCollider2D)components[1];
 
+        transform.position = new Vector3(Mathf.Round(transform.position.x) + 0.5f, Mathf.Round(transform.position.y) - 0.5f, 0);
+        Debug.Log(this.tag + " snapped to " + transform.position);
 	}
 
     // Update is called once per frame
@@ -30,11 +32,8 @@ public class InteractableBox : MonoBehaviour {
 	}
     */
 
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerStay(Collider other)
     {
-        if (collision.collider.CompareTag("Player"))
-        {
-            // Get player input
-        }
+        Debug.Log(other.tag);
     }
 }
