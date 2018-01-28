@@ -1,9 +1,15 @@
 fileFormatVersion: 2
 guid: 1c57368732f19194f9d330b0ee0c9fd0
-timeCreated: 1516851090
+timeCreated: 1516949598
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: sprites sheet walkcycle_0
+    21300002: sprites sheet walkcycle_1
+    21300004: sprites sheet walkcycle_2
+    21300006: sprites sheet walkcycle_3
+    21300008: sprites sheet walkcycle_4
+    21300010: sprites sheet walkcycle_5
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -40,13 +46,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 900
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -65,9 +71,129 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: sprites sheet walkcycle_0
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 21
+        width: 702
+        height: 1173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 14, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sprites sheet walkcycle_1
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 14
+        width: 512
+        height: 1291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 14, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sprites sheet walkcycle_2
+      rect:
+        serializedVersion: 2
+        x: 1612
+        y: 8
+        width: 540
+        height: 1248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sprites sheet walkcycle_3
+      rect:
+        serializedVersion: 2
+        x: 2290
+        y: 44
+        width: 631
+        height: 1203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sprites sheet walkcycle_4
+      rect:
+        serializedVersion: 2
+        x: 3166
+        y: 12
+        width: 465
+        height: 1319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sprites sheet walkcycle_5
+      rect:
+        serializedVersion: 2
+        x: 3715
+        y: 12
+        width: 597
+        height: 1203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 7}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 

@@ -1,7 +1,19 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 84b0d70a504ff814a9a1074009e537b6
 folderAsset: yes
 timeCreated: 1516945875
+=======
+<<<<<<< HEAD
+guid: 771f2039b39373648b738eff4de88407
+folderAsset: yes
+timeCreated: 1516925618
+=======
+guid: 84b0d70a504ff814a9a1074009e537b6
+folderAsset: yes
+timeCreated: 1516945875
+>>>>>>> develop
+>>>>>>> AlphaLevel
 licenseType: Free
 DefaultImporter:
   externalObjects: {}
