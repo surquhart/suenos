@@ -28,16 +28,28 @@ public class EnemyController : BaseUnit {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+        Vector3 origin = new Vector3(transform.position.x + 2.0f*dir, transform.position.y);
+        Vector2 direction = new Vector2(dir, 0);
+        RaycastHit2D hit = Physics2D.Raycast(origin, direction, 8.0f);
+        Debug.DrawRay(origin, new Vector3(dir, 0, 0), Color.blue);
+
+        if (hit.collider != null && !hit.collider.CompareTag("Player"))
+        {
+            MoveHoz(dir);
+            return;
+        }
+
+        if (!IsGrounded(-0.3f, 10))
+        {
+            dir = 1;
+
+        }
+
+        if (!IsGrounded(-0.3f, 10))
+        {
+            dir = -1;
+        }
+
         MoveHoz(dir);
 	}
-
-    private void OnTriggerExit(Collider other)
-    {
-        Debug.Log("AHHHHHHHH");
-        if (other == EnemyPath.GetComponent<Collider>())
-        {
-            Debug.Log("SUUUUUUP");
-            dir *= -1;
-        }
-    }
 }

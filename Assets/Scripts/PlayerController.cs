@@ -5,11 +5,8 @@ using System.Net;
 using System.Security.Cryptography;
 using UnityEngine;
 
-
-
 public class PlayerController : BaseUnit {
 
-    
     public float jumpVert;
     public float jumpHoz;
     public float switchCoolTime;
@@ -39,7 +36,7 @@ public class PlayerController : BaseUnit {
         }
 
         //calls the jump method
-        if (Input.GetKeyDown("space") && IsGrounded()){
+        if (Input.GetKeyDown("space") && IsGrounded(0.3f) && IsGrounded(-0.3f)){
             Jump();
         }
 	    
@@ -74,28 +71,6 @@ public class PlayerController : BaseUnit {
         _RB.velocity += new Vector2(0, jumpVert * worldMod);
         //_RB.velocity += new Vector2(0, jumpVert * worldMod);
         
-    }
-
-    //checks to see if the sprite is grounded
-    private bool IsGrounded()
-    {
-        Vector2 dir = new Vector2(0, -worldMod); //points the Ray from her feet
-
-        //Raycast from both left and right side of sprite
-        Vector3 oriLeft = new Vector3(transform.position.x - 0.3f, transform.position.y + 0.61f*-worldMod);
-        Vector3 oriRight = new Vector3(transform.position.x + 0.3f, transform.position.y + 0.61f*-worldMod);
-
-        RaycastHit2D hitLeft = Physics2D.Raycast(oriLeft, dir, 0.15f);
-        RaycastHit2D hitRight = Physics2D.Raycast(oriRight, dir, 0.15f);
-
-        if (hitLeft.collider != null || hitRight.collider != null)
-        {
-            //Debug.Log("true");
-            return true;
-        }
-        
-        //Debug.Log("false");
-        return false;
     }
 
     private bool CanSwitch()

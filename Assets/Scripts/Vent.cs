@@ -10,7 +10,12 @@ public class Vent : Interactable {
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            collision.transform.position = partner.transform.position;
+            //does this fix teleporting boxes?
+            if (collision.CompareTag("Player"))
+            {
+                collision.transform.position = partner.transform.position; 
+            }
+            
         }
     }
 }
