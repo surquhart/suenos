@@ -237,12 +237,20 @@ Prefab:
     - target: {fileID: 224885335507233120, guid: 2193857b5ea1f1b4ba07bbd74c7d62f7,
         type: 2}
       propertyPath: m_LocalPosition.x
+<<<<<<< HEAD
       value: 189.5
+=======
+      value: 574
+>>>>>>> develop
       objectReference: {fileID: 0}
     - target: {fileID: 224885335507233120, guid: 2193857b5ea1f1b4ba07bbd74c7d62f7,
         type: 2}
       propertyPath: m_LocalPosition.y
+<<<<<<< HEAD
       value: 106.5
+=======
+      value: 323
+>>>>>>> develop
       objectReference: {fileID: 0}
     - target: {fileID: 224885335507233120, guid: 2193857b5ea1f1b4ba07bbd74c7d62f7,
         type: 2}
@@ -1459,11 +1467,20 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1950709981}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 0, y: -2.4923077, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 2077827251}
   m_RootOrder: 0
+=======
+  m_LocalPosition: {x: 67.25, y: 0.32, z: 0}
+  m_LocalScale: {x: 0.65, y: 0.65, z: 0}
+  m_Children:
+  - {fileID: 2077827251}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+>>>>>>> develop
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &2044700471 stripped
 Camera:
@@ -6355,6 +6372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
+<<<<<<< HEAD
   animSpeed: 1
   EnemyPath: {fileID: 1950709981}
 --- !u!95 &2077827253
@@ -6374,6 +6392,10 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+=======
+  animSpeed: 0
+  EnemyPath: {fileID: 0}
+>>>>>>> develop
 --- !u!1001 &2120992557
 Prefab:
   m_ObjectHideFlags: 0
