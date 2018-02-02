@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]
-[RequireComponent(typeof(Animator))]
+//[RequireComponent(typeof(Animator))]
 
 public class BaseUnit : MonoBehaviour {
 
@@ -39,6 +39,7 @@ public class BaseUnit : MonoBehaviour {
 
     }
 
+    public Vector2 PubPos;
     //checks to see if the sprite is grounded
     protected bool IsGrounded(float offset)
     {
@@ -46,7 +47,7 @@ public class BaseUnit : MonoBehaviour {
 
         //Raycast from both left and right side of sprite
         Vector3 origin = new Vector3(transform.position.x + offset, transform.position.y + 0.61f * -worldMod);
-
+        
         RaycastHit2D hit = Physics2D.Raycast(origin, dir, 0.15f);
 
         if (hit.collider != null)
@@ -60,14 +61,17 @@ public class BaseUnit : MonoBehaviour {
     }
 
     //LAYERMASK OVERRIDE
-    protected bool IsGrounded(float offset, int path)
+    protected bool IsGrounded(float offset, int pathMask)
     {
         Vector2 dir = new Vector2(0, -worldMod); //points the Ray from her feet
 
         //Raycast from both left and right side of sprite
         Vector3 origin = new Vector3(transform.position.x + offset, transform.position.y + 0.61f * -worldMod);
 
-        RaycastHit2D hit = Physics2D.Raycast(origin, dir, 0.15f, path);
+        Debug.DrawRay(origin, Vector3.down, Color.red, 1f);
+        PubPos = origin;
+
+        RaycastHit2D hit = Physics2D.Raycast(origin, dir, 0.15f, pathMask);
 
         if (hit.collider != null)
         {

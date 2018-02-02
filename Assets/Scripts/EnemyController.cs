@@ -2,28 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : BaseUnit {
+public class EnemyController : BaseUnit
+{
+    public GameObject L_EnemyTurner;
+    public GameObject R_EnemyTurner;
 
-    
-
-    public GameObject EnemyPath;
-
+    private bool chase;
     private float dir;
+    private LayerMask ground;
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
+
+        ground = LayerMask.GetMask("EnemyPath");
 
         _SR = GetComponent<SpriteRenderer>();
         _RB = GetComponent<Rigidbody2D>();
+        dir = 1;
 
-		if (_SR.flipX)
-        {
-            dir = 1;
-        }
-        else
-        {
-            dir = -1;
-        }
 	}
 	
 	// Update is called once per frame
@@ -35,21 +32,30 @@ public class EnemyController : BaseUnit {
 
         if (hit.collider != null && !hit.collider.CompareTag("Player"))
         {
-            MoveHoz(dir);
-            return;
+            chase = true;
         }
-
-        if (!IsGrounded(-0.3f, 10))
+        else
         {
-            dir = 1;
-
-        }
-
-        if (!IsGrounded(-0.3f, 10))
-        {
-            dir = -1;
+            if (transform.position.x > L_EnemyTurner.transform.position.x && transform.position.x > R_EnemyTurner.transform.position.x)
+            {
+                dir = -1;
+            }
+            else if (transform.position.x < R_EnemyTurner.transform.position.x && transform.position.x < L_EnemyTurner.transform.position.x)
+            {
+                dir = 1;
+            }
         }
 
         MoveHoz(dir);
 	}
+
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!chase && other.CompareTag("EnemyTurner"))
+        {
+            dir *= -1;
+        }
+    }
+
 }
