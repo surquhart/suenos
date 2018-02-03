@@ -36,8 +36,18 @@ public class PlayerController : BaseUnit {
         }
 
         //calls the jump method
-        if (Input.GetKeyDown("space") && IsGrounded(0.3f) && IsGrounded(-0.3f)){
+        if (Input.GetKeyDown("space") && (IsGrounded(0.3f) || IsGrounded(-0.3f)))
+        {            
             Jump();
+        }
+
+        if (IsGrounded(0.3f) || IsGrounded(-0.3f))
+        {
+            _AN.SetBool("Jumping", false);
+        }
+        else
+        {
+            _AN.SetBool("Jumping", true);
         }
 	    
 	    //Jump Ray
@@ -115,6 +125,7 @@ public class PlayerController : BaseUnit {
 
             //_RB.velocity = new Vector2(_RB.velocity.x, -(_RB.velocity.y));
 
+            /* Color switching, from before sprite was coloured
             if (worldMod == 1)
             {
                 _SR.color = Color.black;
@@ -123,6 +134,7 @@ public class PlayerController : BaseUnit {
             {
                 _SR.color = Color.white;
             }
+            */
             
 
             _RB.gravityScale *= -1; 

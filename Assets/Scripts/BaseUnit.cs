@@ -53,6 +53,7 @@ public class BaseUnit : MonoBehaviour {
         if (hit.collider != null)
         {
             //Debug.Log("true");
+            
             return true;
         }
 
