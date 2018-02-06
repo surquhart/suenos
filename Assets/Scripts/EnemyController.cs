@@ -31,21 +31,6 @@ public class EnemyController : BaseUnit {
         MoveHoz(dir);
 	}
 
-    private void MoveHoz(float direction)
-    {
-        //Flips the orientation of the sprite
-        if (direction < 0) _SR.flipX = true;
-        else if (direction > 0) _SR.flipX = false;
-
-        //Debug.Log("Moving");
-        //apply velocity so it moves
-        _RB.velocity = new Vector2(moveSpeed * direction, _RB.velocity.y);
-
-
-        //_AN.SetFloat("Velocity", Mathf.Abs(_RB.velocity.x) * (animSpeed / 10)); //Animation speed scales with velocity
-
-    }
-
     private void OnTriggerExit(Collider other)
     {
         Debug.Log("AHHHHHHHH");

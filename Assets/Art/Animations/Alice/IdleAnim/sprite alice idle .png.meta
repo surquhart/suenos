@@ -1,6 +1,16 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: ebcf6d48d708e1f42ad62eccb64f3961
 timeCreated: 1516945917
+=======
+<<<<<<< HEAD
+guid: d93d0419c104e7640a27fe50739ed5a9
+timeCreated: 1516925643
+=======
+guid: ebcf6d48d708e1f42ad62eccb64f3961
+timeCreated: 1516945917
+>>>>>>> develop
+>>>>>>> AlphaLevel
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}

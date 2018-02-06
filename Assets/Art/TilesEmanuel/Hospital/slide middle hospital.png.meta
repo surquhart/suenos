@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: a852e68f299ceb34c97c143ebcfea921
-timeCreated: 1516851100
+timeCreated: 1516930069
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
@@ -46,7 +46,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 900
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -65,10 +65,96 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
     sprites: []
-    outline: []
+    outline:
+    - - {x: 446, y: 9}
+      - {x: 440, y: 13}
+      - {x: 438, y: 13}
+      - {x: 436, y: 15}
+      - {x: 434, y: 15}
+      - {x: 432, y: 17}
+      - {x: 430, y: 17}
+      - {x: 424, y: 21}
+      - {x: 424, y: 22}
+      - {x: 422, y: 24}
+      - {x: 416, y: 24}
+      - {x: 416, y: 26}
+      - {x: 414, y: 28}
+      - {x: 408, y: 28}
+      - {x: 402, y: 32}
+      - {x: 398, y: 33}
+      - {x: 394, y: 36}
+      - {x: 390, y: 37}
+      - {x: 387, y: 40}
+      - {x: 382, y: 42}
+      - {x: 380, y: 42}
+      - {x: 376, y: 45}
+      - {x: 374, y: 45}
+      - {x: 373, y: 47}
+      - {x: 370, y: 48}
+      - {x: 368, y: 50}
+      - {x: 367, y: 52}
+      - {x: 361, y: 52}
+      - {x: 359, y: 56}
+      - {x: 353, y: 56}
+      - {x: 300, y: 83}
+      - {x: 298, y: 83}
+      - {x: 297, y: 85}
+      - {x: -278, y: 372}
+      - {x: -280, y: 374}
+      - {x: -281, y: 376}
+      - {x: -287, y: 376}
+      - {x: -289, y: 380}
+      - {x: -295, y: 380}
+      - {x: -302, y: 384}
+      - {x: -304, y: 386}
+      - {x: -305, y: 388}
+      - {x: -311, y: 388}
+      - {x: -430, y: 448}
+      - {x: -433, y: 450}
+      - {x: -450, y: 450}
+      - {x: -450, y: -450}
+      - {x: 450, y: -450}
+      - {x: 450, y: 7}
+      - {x: 448, y: 9}
     physicsShape: []
   spritePackingTag: 
   userData: 
