@@ -9,18 +9,13 @@ public class EnemyController : BaseUnit
 
     private bool chase;
     private float dir;
-    private LayerMask ground;
 
     // Use this for initialization
     void Start ()
     {
-
-        ground = LayerMask.GetMask("EnemyPath");
-
         _SR = GetComponent<SpriteRenderer>();
         _RB = GetComponent<Rigidbody2D>();
         dir = 1;
-
 	}
 	
 	// Update is called once per frame

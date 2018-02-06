@@ -5,18 +5,41 @@ using System.Net;
 using System.Security.Cryptography;
 using UnityEngine;
 
-public class PlayerController : BaseUnit {
+public class PlayerController : BaseUnit
+{
 
-    public float jumpVert;
-    public float jumpHoz;
-    public float switchCoolTime;
-    public float nextSwitch = 0.0f;
-    
+    public float jumpVert; //the vertical velocity applied to Alice when she jumps
+    public float jumpHoz; //unused
+    public float switchCoolTime; //Cooldown before switch can be used again
+    public float maxFall; //the maximum safe height Alice can fall. Checked against her Y velocity
+
+    [HideInInspector]
+    public float nextSwitch = 0.0f; //countdown for Alice to be able to switch again
+
     private bool interacting; //boolean that returns if the player is pressing X
-    
-	
-	// Update is called once per frame
-	void Update () {
+    private bool isAlive; //is Alice still alive? The game stops if this is false
+    private bool falling; //is the player in the air? Prevents the FallingDamage coroutine from running multiple times simultaneously
+
+    private void Start()
+    {
+        isAlive = true;
+        falling = false;
+
+        if(GameController.instance.LastCheckpoint != Vector2.zero)
+        {
+            transform.position = GameController.instance.LastCheckpoint;
+        }
+    }
+
+
+    // Update is called once per frame
+    void Update ()
+    {
+        if (!isAlive)
+        {
+            //exit without doing anything if Alice is dead
+            return;
+        }
 
         if (Input.GetKey("left shift") || Input.GetKey("right shift"))
         {
@@ -48,6 +71,10 @@ public class PlayerController : BaseUnit {
         else
         {
             _AN.SetBool("Jumping", true);
+            if (!falling)
+            {
+                StartCoroutine(FallingDamage());
+            }
         }
 	    
 	    //Jump Ray
@@ -75,11 +102,9 @@ public class PlayerController : BaseUnit {
     }
 
     // causes the sprite to jump
-    
     private void Jump()
     {
         _RB.velocity += new Vector2(0, jumpVert * worldMod);
-        //_RB.velocity += new Vector2(0, jumpVert * worldMod);
         
     }
 
@@ -142,9 +167,44 @@ public class PlayerController : BaseUnit {
             nextSwitch = Time.time + switchCoolTime; //cooldown before the switch ability can be used again.
         }               
     }
-    
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.transform.CompareTag("Enemy"))
+        {
+            Die();
+        }
+    }
+
+    //Kills Alice if she falls from too great a height.
+    private IEnumerator FallingDamage()
+    {
+        falling = true;
+        while (!(IsGrounded(0.3f) || IsGrounded(-0.3f)))
+        {
+            yield return null;
+        }
+        //Compare Alice's fall speed against the maximum safe falling distance
+        if (Mathf.Abs(_RB.velocity.y) > maxFall && !(Input.GetKey("left shift") || Input.GetKey("right shift")))
+        {
+            Die();
+        }
+        falling = false;
+    }
+
+    private void Die()
+    {
+        isAlive = false;
+        GameController.GameOver();
+    }
+
     public bool Interacting
     {
         get { return interacting; }
+    }
+
+    public bool IsAlive
+    {
+        get { return isAlive; }
     }
 }
