@@ -2,18 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
-public class GameController : MonoBehaviour {
+public class GameController : MonoBehaviour
+{
 
     public static GameController instance = null;
 
-    public GameObject HUD;
-    public GameObject PauseMenu;
+    public Vector2 LastCheckpoint;
 
-    public Camera mainCam;
-    public RenderTexture scrShot;
-    
     private void Awake()
     {
         if (instance == null)
@@ -27,32 +23,6 @@ public class GameController : MonoBehaviour {
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            GameOver();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Pause();
-        }
-
-        if (HUD.active == true && mainCam.targetTexture != null)
-        {
-            mainCam.targetTexture = null;
-        }
-    }
-
-    public void Pause()
-    {
-        mainCam = FindObjectOfType<Camera>();
-        mainCam.targetTexture = scrShot;
-        HUD.SetActive(false);
-        PauseMenu.SetActive(true);
-    }
-
     public void LoadGameWrapper()
     {
         LoadGame();
@@ -61,7 +31,7 @@ public class GameController : MonoBehaviour {
     {
         SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
-        
+
     public void MainMenuWrapper()
     {
         MainMenu();
@@ -70,7 +40,7 @@ public class GameController : MonoBehaviour {
     {
         SceneManager.LoadScene("Suenos_MainMenu", LoadSceneMode.Single);
     }
-    
+
     public static void GameOver()
     {
         SceneManager.LoadScene("Suenos_GameOver", LoadSceneMode.Additive);

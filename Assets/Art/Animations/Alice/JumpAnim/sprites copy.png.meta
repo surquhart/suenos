@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7090af806babf144092b60660b4f0e03
-timeCreated: 1516950636
+timeCreated: 1517632319
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -112,12 +112,12 @@ TextureImporter:
       name: sprites copy_0
       rect:
         serializedVersion: 2
-        x: 159
+        x: 957
         y: 0
-        width: 559
-        height: 759
+        width: 567
+        height: 1243
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -126,12 +126,12 @@ TextureImporter:
       name: sprites copy_1
       rect:
         serializedVersion: 2
-        x: 943
-        y: 4
-        width: 585
-        height: 1254
+        x: 1621
+        y: 0
+        width: 704
+        height: 1258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -140,26 +140,12 @@ TextureImporter:
       name: sprites copy_2
       rect:
         serializedVersion: 2
-        x: 1610
-        y: 410
-        width: 720
-        height: 813
+        x: 2339
+        y: 2
+        width: 643
+        height: 1324
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sprites copy_3
-      rect:
-        serializedVersion: 2
-        x: 2327
-        y: 1
-        width: 660
-        height: 1340
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

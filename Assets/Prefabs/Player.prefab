@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50047147193368566}
   - component: {fileID: 70566924744984264}
   - component: {fileID: 114654602832515186}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -70,8 +70,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1101810754104730}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.31, y: -0.26999998, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalPosition: {x: -3.16, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4118156535008810}
   m_Father: {fileID: 0}
@@ -144,8 +144,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.6100001, y: 0.95}
+  m_Offset: {x: -0.0026773214, y: 0.004665315}
+  m_Size: {x: 0.5296819, y: 1.4493514}
   m_Direction: 0
 --- !u!81 &81833576257180332
 AudioListener:
@@ -163,7 +163,7 @@ Animator:
   m_GameObject: {fileID: 1101810754104730}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b28d0f2408e53cd4bb69f83a465628a6, type: 2}
+  m_Controller: {fileID: 9100000, guid: f37c179594b101e4db8d86bef43cde60, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -196,10 +196,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2.5
-  animSpeed: 3.5
-  jumpVert: 4
+  animSpeed: 3
+  PubPos: {x: 0, y: 0}
+  jumpVert: 5
   jumpHoz: 4
   switchCoolTime: 2
+  maxFall: 9
   nextSwitch: 0
 --- !u!124 &124384118103593354
 Behaviour:
@@ -242,8 +244,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f97d4601c466e424a829da0e882c5703, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: ebcf6d48d708e1f42ad62eccb64f3961, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

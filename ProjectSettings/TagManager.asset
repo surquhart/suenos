@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Rift
+  - EnemyTurner
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -15,11 +17,11 @@ TagManager:
   - UI
   - 
   - 
-  - Ground Layer
+  - GroundLayer
   - Interactables
-  - 
-  - 
-  - 
+  - EnemyPath
+  - CheckPoint
+  - Player
   - 
   - 
   - 

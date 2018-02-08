@@ -26,7 +26,7 @@ public class GameOver : MonoBehaviour
         if (Input.anyKeyDown && canCont)
         {
             Time.timeScale = 1;
-            GameController.MainMenu();
+            GameController.LoadGame();
         }
     }
 
