@@ -5,21 +5,41 @@ using System.Net;
 using System.Security.Cryptography;
 using UnityEngine;
 
+public class PlayerController : BaseUnit
+{
 
+    public float jumpVert; //the vertical velocity applied to Alice when she jumps
+    public float jumpHoz; //unused
+    public float switchCoolTime; //Cooldown before switch can be used again
+    public float maxFall; //the maximum safe height Alice can fall. Checked against her Y velocity
 
-public class PlayerController : BaseUnit {
+    [HideInInspector]
+    public float nextSwitch = 0.0f; //countdown for Alice to be able to switch again
 
-    
-    public float jumpVert;
-    public float jumpHoz;
-    public float switchCoolTime;
-    public float nextSwitch = 0.0f;
-    
     private bool interacting; //boolean that returns if the player is pressing X
-    
-	
-	// Update is called once per frame
-	void Update () {
+    private bool isAlive; //is Alice still alive? The game stops if this is false
+    private bool falling; //is the player in the air? Prevents the FallingDamage coroutine from running multiple times simultaneously
+
+    private void Start()
+    {
+        isAlive = true;
+        falling = false;
+
+        if(GameController.instance.LastCheckpoint != Vector2.zero)
+        {
+            transform.position = GameController.instance.LastCheckpoint;
+        }
+    }
+
+
+    // Update is called once per frame
+    void Update ()
+    {
+        if (!isAlive)
+        {
+            //exit without doing anything if Alice is dead
+            return;
+        }
 
         if (Input.GetKey("left shift") || Input.GetKey("right shift"))
         {
@@ -39,8 +59,22 @@ public class PlayerController : BaseUnit {
         }
 
         //calls the jump method
-        if (Input.GetKeyDown("space") && IsGrounded()){
+        if (Input.GetKeyDown("space") && (IsGrounded(0.3f) || IsGrounded(-0.3f)))
+        {            
             Jump();
+        }
+
+        if (IsGrounded(0.3f) || IsGrounded(-0.3f))
+        {
+            _AN.SetBool("Jumping", false);
+        }
+        else
+        {
+            _AN.SetBool("Jumping", true);
+            if (!falling)
+            {
+                StartCoroutine(FallingDamage());
+            }
         }
 	    
 	    //Jump Ray
@@ -68,34 +102,10 @@ public class PlayerController : BaseUnit {
     }
 
     // causes the sprite to jump
-    
     private void Jump()
     {
         _RB.velocity += new Vector2(0, jumpVert * worldMod);
-        //_RB.velocity += new Vector2(0, jumpVert * worldMod);
         
-    }
-
-    //checks to see if the sprite is grounded
-    private bool IsGrounded()
-    {
-        Vector2 dir = new Vector2(0, -worldMod); //points the Ray from her feet
-
-        //Raycast from both left and right side of sprite
-        Vector3 oriLeft = new Vector3(transform.position.x - 0.3f, transform.position.y + 0.61f*-worldMod);
-        Vector3 oriRight = new Vector3(transform.position.x + 0.3f, transform.position.y + 0.61f*-worldMod);
-
-        RaycastHit2D hitLeft = Physics2D.Raycast(oriLeft, dir, 0.15f);
-        RaycastHit2D hitRight = Physics2D.Raycast(oriRight, dir, 0.15f);
-
-        if (hitLeft.collider != null || hitRight.collider != null)
-        {
-            //Debug.Log("true");
-            return true;
-        }
-        
-        //Debug.Log("false");
-        return false;
     }
 
     private bool CanSwitch()
@@ -140,6 +150,7 @@ public class PlayerController : BaseUnit {
 
             //_RB.velocity = new Vector2(_RB.velocity.x, -(_RB.velocity.y));
 
+            /* Color switching, from before sprite was coloured
             if (worldMod == 1)
             {
                 _SR.color = Color.black;
@@ -148,6 +159,7 @@ public class PlayerController : BaseUnit {
             {
                 _SR.color = Color.white;
             }
+            */
             
 
             _RB.gravityScale *= -1; 
@@ -155,9 +167,44 @@ public class PlayerController : BaseUnit {
             nextSwitch = Time.time + switchCoolTime; //cooldown before the switch ability can be used again.
         }               
     }
-    
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.transform.CompareTag("Enemy"))
+        {
+            Die();
+        }
+    }
+
+    //Kills Alice if she falls from too great a height.
+    private IEnumerator FallingDamage()
+    {
+        falling = true;
+        while (!(IsGrounded(0.3f) || IsGrounded(-0.3f)))
+        {
+            yield return null;
+        }
+        //Compare Alice's fall speed against the maximum safe falling distance
+        if (Mathf.Abs(_RB.velocity.y) > maxFall && !(Input.GetKey("left shift") || Input.GetKey("right shift")))
+        {
+            Die();
+        }
+        falling = false;
+    }
+
+    private void Die()
+    {
+        isAlive = false;
+        GameController.GameOver();
+    }
+
     public bool Interacting
     {
         get { return interacting; }
+    }
+
+    public bool IsAlive
+    {
+        get { return isAlive; }
     }
 }
