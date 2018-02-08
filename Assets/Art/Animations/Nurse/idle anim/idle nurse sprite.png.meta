@@ -1,9 +1,15 @@
 fileFormatVersion: 2
-guid: a4aa940d8a52fcd47ab806ba5c215d82
-timeCreated: 1518061383
+guid: 81fe923b514a44c4593ac5564f95dafa
+timeCreated: 1518060535
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: idle nurse sprite_0
+    21300002: idle nurse sprite_1
+    21300004: idle nurse sprite_2
+    21300006: idle nurse sprite_3
+    21300008: idle nurse sprite_4
+    21300010: idle nurse sprite_5
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -40,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -65,9 +71,129 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: idle nurse sprite_0
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 14
+        width: 487
+        height: 1695
+      alignment: 9
+      pivot: {x: 0.59060115, y: 0.0016813914}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle nurse sprite_1
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 14
+        width: 531
+        height: 1695
+      alignment: 9
+      pivot: {x: 0.5357804, y: 0.0005095119}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle nurse sprite_2
+      rect:
+        serializedVersion: 2
+        x: 1146
+        y: 14
+        width: 566
+        height: 1695
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle nurse sprite_3
+      rect:
+        serializedVersion: 2
+        x: 1735
+        y: 14
+        width: 584
+        height: 1695
+      alignment: 9
+      pivot: {x: 0.48816964, y: -0.00050949445}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle nurse sprite_4
+      rect:
+        serializedVersion: 2
+        x: 2334
+        y: 14
+        width: 566
+        height: 1695
+      alignment: 9
+      pivot: {x: 0.50762916, y: -0.00050949445}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle nurse sprite_5
+      rect:
+        serializedVersion: 2
+        x: 2924
+        y: 14
+        width: 531
+        height: 1695
+      alignment: 9
+      pivot: {x: 0.5329254, y: -0.0002515455}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 
