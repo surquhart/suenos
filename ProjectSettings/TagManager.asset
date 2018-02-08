@@ -8,6 +8,7 @@ TagManager:
   - Rift
   - EnemyTurner
   - Enemy
+  - Box
   layers:
   - Default
   - TransparentFX
