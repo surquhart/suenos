@@ -10,18 +10,22 @@ public class BaseUnit : MonoBehaviour {
 
     public float moveSpeed;
     public float animSpeed;
+    public float rayCasterOffsetX;
+    public float rayCasterOffsetY;
 
     protected int worldMod; //pos or neg integer value that changes physics based in each world.
 
     protected Rigidbody2D _RB;
     protected SpriteRenderer _SR;
     protected Animator _AN;
+    protected CapsuleCollider2D _CC;
 
     // Use this for initialization
     void Awake () {
         _RB = GetComponent<Rigidbody2D>();
         _SR = GetComponent<SpriteRenderer>();
         _AN = GetComponent<Animator>();
+        _CC = GetComponent<CapsuleCollider2D>();
 
         worldMod = 1;
     }
@@ -39,42 +43,19 @@ public class BaseUnit : MonoBehaviour {
 
     }
 
-    public Vector2 PubPos;
-    //checks to see if the sprite is grounded
-    protected bool IsGrounded(float offset)
-    {
-        Vector2 dir = new Vector2(0, -worldMod); //points the Ray from her feet
-
-        //Raycast from both left and right side of sprite
-        Vector3 origin = new Vector3(transform.position.x + offset, transform.position.y + 0.61f * -worldMod);
-        
-        RaycastHit2D hit = Physics2D.Raycast(origin, dir, 0.15f);
-
-        if (hit.collider != null)
-        {
-            //Debug.Log("true");
-            
-            return true;
-        }
-
-        //Debug.Log("false");
-        return false;
-    }
-
     //LAYERMASK OVERRIDE
-    protected bool IsGrounded(float offset, int pathMask)
+    protected bool IsGrounded()
     {
         Vector2 dir = new Vector2(0, -worldMod); //points the Ray from her feet
 
         //Raycast from both left and right side of sprite
-        Vector3 origin = new Vector3(transform.position.x + offset, transform.position.y + 0.61f * -worldMod);
+        Vector3 originRight = new Vector3(transform.position.x + rayCasterOffsetX, transform.position.y + rayCasterOffsetY * -worldMod);
+        Vector3 originLeft = new Vector3(transform.position.x - rayCasterOffsetX, transform.position.y + rayCasterOffsetY * -worldMod);
 
-        Debug.DrawRay(origin, Vector3.down, Color.red, 1f);
-        PubPos = origin;
+        RaycastHit2D hitRight = Physics2D.Raycast(originRight, dir, 0.15f);
+        RaycastHit2D hitLeft = Physics2D.Raycast(originLeft, dir, 0.15f);
 
-        RaycastHit2D hit = Physics2D.Raycast(origin, dir, 0.15f, pathMask);
-
-        if (hit.collider != null)
+        if (hitLeft.collider != null && hitRight.collider != null)
         {
             //Debug.Log("true");
             return true;

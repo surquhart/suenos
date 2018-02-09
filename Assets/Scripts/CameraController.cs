@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour {
     private float zoom;
 	
     private Vector3 offset;
-    private float pedestal = 0.0f;
+    //private float pedestal = 0.0f;
 
     public PlayerController player;
     

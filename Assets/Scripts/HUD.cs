@@ -18,7 +18,8 @@ public class HUD : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		if (Time.time >= player.nextSwitch)
         {
             coolDown.text = "Switch Ready";
