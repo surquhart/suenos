@@ -166,6 +166,20 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+    - serializedVersion: 2
+      name: jump spirtes_4
+      rect:
+        serializedVersion: 2
+        x: 1557
+        y: 402
+        width: 666
+        height: 811
+      alignment: 9
+      pivot: {x: 0.44620585, y: -0.47433305}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 
