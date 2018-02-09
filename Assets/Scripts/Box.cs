@@ -19,7 +19,7 @@ public class Box : Interactable {
 
     private void Update()
     {
-        if(_RB.velocity != Vector2.zero && !_AS.isPlaying)
+        if((_RB.velocity.x < -0.3f || _RB.velocity.x > 0.3f)  && !_AS.isPlaying)
         {
             _AC.PlaySound();
         }

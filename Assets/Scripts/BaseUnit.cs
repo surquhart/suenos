@@ -55,7 +55,7 @@ public class BaseUnit : MonoBehaviour {
         RaycastHit2D hitRight = Physics2D.Raycast(originRight, dir, 0.15f);
         RaycastHit2D hitLeft = Physics2D.Raycast(originLeft, dir, 0.15f);
 
-        if (hitLeft.collider != null && hitRight.collider != null)
+        if (hitLeft.collider != null || hitRight.collider != null)
         {
             //Debug.Log("true");
             return true;

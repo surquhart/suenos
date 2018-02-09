@@ -2,19 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PressurePlate : Interactable
-{
-    public Sprite[] sprites;
-    protected SpriteRenderer _SR;
-
-    private void Awake()
-    {
-        _SR = GetComponent<SpriteRenderer>();
-    }
+public class HeavyPressurePlate : PressurePlate {
 
     private void OnTriggerEnter2D(Collider2D other)
-	{
-        if (other.CompareTag("Player") || other.CompareTag("Box"))
+    {
+        if (other.CompareTag("Box"))
         {
             if (!active)
             {
@@ -22,11 +14,11 @@ public class PressurePlate : Interactable
                 _SR.sprite = sprites[1];
             }
         }
-	}
+    }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (active)
+        if (active && other.CompareTag("Box"))
         {
             active = false;
             _SR.sprite = sprites[0];

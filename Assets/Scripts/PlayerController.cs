@@ -11,7 +11,7 @@ public class PlayerController : BaseUnit
     public float jumpVert; //the vertical velocity applied to Alice when she jumps
     public float jumpHoz; //unused
     public float switchCoolTime; //Cooldown before switch can be used again
-    public float maxFall; //the maximum safe height Alice can fall. Checked against her Y velocity
+    //public float maxFall; //the maximum safe height Alice can fall. Checked against her Y velocity
 
     public SwitchDetector _SD;
     public LayerMask ground;
@@ -48,8 +48,6 @@ public class PlayerController : BaseUnit
             return;
         }
 
-        CanSwitch();
-
         if (Input.GetKey("left shift") || Input.GetKey("right shift"))
         {
             
@@ -62,7 +60,7 @@ public class PlayerController : BaseUnit
         }
 
         
-        if (Input.GetKey("x"))
+        if (Input.GetKey("e"))
         {
             //USE PLAYER INPUT
         }
@@ -73,6 +71,7 @@ public class PlayerController : BaseUnit
             Jump();
         }
 
+        /*
         if (IsGrounded())
         {
             _AN.SetBool("Jumping", false);
@@ -86,6 +85,7 @@ public class PlayerController : BaseUnit
                 StartCoroutine(FallingDamage());
             }
         }
+        */
 
         if (Input.GetKeyDown(KeyCode.LeftControl) && IsGrounded())
         {
@@ -163,8 +163,7 @@ public class PlayerController : BaseUnit
         RaycastHit2D hitLeft = Physics2D.Raycast(oriLeft, dir, 5.0f);
         RaycastHit2D hitRight = Physics2D.Raycast(oriRight, dir, 5.0f);
         */
-        Debug.Log(_SD.transform.position.y);
-        Debug.Log(_SD.IsColliding);
+
         if (IsGrounded() && !_SD.IsColliding)
         {
             
@@ -215,6 +214,7 @@ public class PlayerController : BaseUnit
         }
     }
 
+    /*
     //Kills Alice if she falls from too great a height.
     private IEnumerator FallingDamage()
     {
@@ -230,6 +230,7 @@ public class PlayerController : BaseUnit
         }
         falling = false;
     }
+    */
 
     private void Die()
     {
