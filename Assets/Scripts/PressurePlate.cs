@@ -18,7 +18,7 @@ public class PressurePlate : Interactable
         {
             if (!active)
             {
-                active = true;
+                active = true;                
                 _SR.sprite = sprites[1];
             }
         }

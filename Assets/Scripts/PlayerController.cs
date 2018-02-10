@@ -219,7 +219,7 @@ public class PlayerController : BaseUnit
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.transform.CompareTag("Enemy"))
+        if (other.collider.CompareTag("Enemy"))
         {
             Die();
         }
@@ -243,7 +243,7 @@ public class PlayerController : BaseUnit
     }
     */
 
-    private void Die()
+    public void Die()
     {
         isAlive = false;
         GameController.GameOver();
