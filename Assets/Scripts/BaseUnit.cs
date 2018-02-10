@@ -67,6 +67,15 @@ public class BaseUnit : MonoBehaviour {
         return false;
     }
 
+private void Update()
+{
+    if(_RB.velocity.x < 0f || _RB.velocity.x > 0f)
+    {
+        _AC.PlaySound();
+    }
+}
+
+
     public int WorldMod
     {
         get { return worldMod; }

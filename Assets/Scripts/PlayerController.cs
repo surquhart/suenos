@@ -21,7 +21,7 @@ public class PlayerController : BaseUnit
 
     //private bool interacting; //boolean that returns if the player is pressing X
     private bool isAlive; //is Alice still alive? The game stops if this is false
-    private bool falling; //is the player in the air? Prevents the FallingDamage coroutine from running multiple times simultaneously
+    //private bool falling; //is the player in the air? Prevents the FallingDamage coroutine from running multiple times simultaneously
     private bool crawling;
 
     [SerializeField]
@@ -33,7 +33,7 @@ public class PlayerController : BaseUnit
     private void Start()
     {
         isAlive = true;
-        falling = false;
+        //falling = false;
 
         if(GameController.instance.LastCheckpoint != Vector2.zero)
         {
