@@ -19,6 +19,7 @@ public class BaseUnit : MonoBehaviour {
     protected SpriteRenderer _SR;
     protected Animator _AN;
     protected CapsuleCollider2D _CC;
+    protected AudioController _AC;
 
     // Use this for initialization
     void Awake () {
@@ -26,6 +27,7 @@ public class BaseUnit : MonoBehaviour {
         _SR = GetComponent<SpriteRenderer>();
         _AN = GetComponent<Animator>();
         _CC = GetComponent<CapsuleCollider2D>();
+        _AC = GetComponent<AudioController>();
 
         worldMod = 1;
     }

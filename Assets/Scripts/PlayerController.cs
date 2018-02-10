@@ -24,6 +24,9 @@ public class PlayerController : BaseUnit
     private bool falling; //is the player in the air? Prevents the FallingDamage coroutine from running multiple times simultaneously
     private bool crawling;
 
+    [SerializeField]
+    private bool step;
+
     private Vector2 crawlColliderOffset = new Vector2(0, -0.5f);
     private Vector2 crawlColliderSize = new Vector2(1.45f, 0.5f);
 
@@ -36,6 +39,7 @@ public class PlayerController : BaseUnit
         {
             transform.position = GameController.instance.LastCheckpoint;
         }
+
     }
 
 
@@ -50,7 +54,7 @@ public class PlayerController : BaseUnit
 
         if (Input.GetKey("left shift") || Input.GetKey("right shift"))
         {
-            
+
             //Transform ground;
             if (CanSwitch())
             {
@@ -60,18 +64,22 @@ public class PlayerController : BaseUnit
         }
 
         
-        if (Input.GetKey("e"))
+        // AUDIO GOES HERE
+        if (step)
         {
-            //USE PLAYER INPUT
+            step = false;
+            _AC.PlaySound();
         }
+        
 
+        
         //calls the jump method
         if (Input.GetKeyDown("space") && !crawling && IsGrounded())
         {            
             Jump();
         }
 
-        /*
+        
         if (IsGrounded())
         {
             _AN.SetBool("Jumping", false);
@@ -80,12 +88,15 @@ public class PlayerController : BaseUnit
         else
         {
             _AN.SetBool("Jumping", true);
+            /*
             if (!falling)
             {
                 StartCoroutine(FallingDamage());
             }
+            */
         }
-        */
+
+        
 
         if (Input.GetKeyDown(KeyCode.LeftControl) && IsGrounded())
         {

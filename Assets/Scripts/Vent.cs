@@ -8,7 +8,7 @@ public class Vent : Interactable {
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             //does this fix teleporting boxes?
             if (collision.CompareTag("Player"))

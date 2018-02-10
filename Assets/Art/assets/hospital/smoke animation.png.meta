@@ -1,9 +1,29 @@
 fileFormatVersion: 2
 guid: 717e848dd5cf62245873945fa472054d
-timeCreated: 1518061380
+timeCreated: 1518227122
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: smoke animation_0
+    21300002: smoke animation_1
+    21300004: smoke animation_2
+    21300006: smoke animation_3
+    21300008: smoke animation_4
+    21300010: smoke animation_5
+    21300012: smoke animation_6
+    21300014: smoke animation_7
+    21300016: smoke animation_8
+    21300018: smoke animation_9
+    21300020: smoke animation_10
+    21300022: smoke animation_11
+    21300024: smoke animation_12
+    21300026: smoke animation_13
+    21300028: smoke animation_14
+    21300030: smoke animation_15
+    21300032: smoke animation_16
+    21300034: smoke animation_17
+    21300036: smoke animation_18
+    21300038: smoke animation_19
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -40,13 +60,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 900
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -65,9 +85,325 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: smoke animation_0
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 4
+        width: 264
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: smoke animation_1
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 3
+        width: 340
+        height: 420
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: smoke animation_2
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 0
+        width: 339
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: smoke animation_3
+      rect:
+        serializedVersion: 2
+        x: 1571
+        y: 0
+        width: 423
+        height: 1050
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: smoke animation_4
+      rect:
+        serializedVersion: 2
+        x: 2106
+        y: 9
+        width: 488
+        height: 1139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: smoke animation_5
+      rect:
+        serializedVersion: 2
+        x: 2583
+        y: 9
+        width: 570
+        height: 1599
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: smoke animation_6
+      rect:
+        serializedVersion: 2
+        x: 3182
+        y: 0
+        width: 553
+        height: 1942
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: smoke animation_7
+      rect:
+        serializedVersion: 2
+        x: 3735
+        y: 18
+        width: 685
+        height: 2454
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: smoke animation_8
+      rect:
+        serializedVersion: 2
+        x: 4412
+        y: 0
+        width: 716
+        height: 2461
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: smoke animation_9
+      rect:
+        serializedVersion: 2
+        x: 5112
+        y: 0
+        width: 702
+        height: 2467
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: smoke animation_10
+      rect:
+        serializedVersion: 2
+        x: 5860
+        y: 15
+        width: 695
+        height: 2475
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: smoke animation_11
+      rect:
+        serializedVersion: 2
+        x: 6560
+        y: 31
+        width: 689
+        height: 2454
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: smoke animation_12
+      rect:
+        serializedVersion: 2
+        x: 7274
+        y: 0
+        width: 645
+        height: 2477
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: smoke animation_13
+      rect:
+        serializedVersion: 2
+        x: 7940
+        y: 0
+        width: 574
+        height: 1934
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: smoke animation_14
+      rect:
+        serializedVersion: 2
+        x: 8540
+        y: 27
+        width: 558
+        height: 1562
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: smoke animation_15
+      rect:
+        serializedVersion: 2
+        x: 9098
+        y: 32
+        width: 465
+        height: 1100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: smoke animation_16
+      rect:
+        serializedVersion: 2
+        x: 9702
+        y: 17
+        width: 396
+        height: 1027
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: smoke animation_17
+      rect:
+        serializedVersion: 2
+        x: 10211
+        y: 13
+        width: 359
+        height: 616
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: smoke animation_18
+      rect:
+        serializedVersion: 2
+        x: 10682
+        y: 17
+        width: 322
+        height: 407
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: smoke animation_19
+      rect:
+        serializedVersion: 2
+        x: 11177
+        y: 17
+        width: 235
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 

@@ -12,7 +12,7 @@ public class UIController : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.G))
         {
             GameController.GameOver();
         }
