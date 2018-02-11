@@ -18,8 +18,9 @@ public class Paused : MonoBehaviour {
 
     public void OnDisable()
     {
+        this.enabled = false;
         //StartCoroutine(SplitScreen(-1));
-        Debug.Log("Resume");
+        //Debug.Log("Resume");
         top.rectTransform.anchoredPosition = new Vector2(0, 161.5f);
         bottom.rectTransform.anchoredPosition = new Vector2(0, -161.5f);
         Time.timeScale = 1;
