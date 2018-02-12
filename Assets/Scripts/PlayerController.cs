@@ -13,6 +13,15 @@ public class PlayerController : BaseUnit
     public float switchCoolTime; //Cooldown before switch can be used again
     //public float maxFall; //the maximum safe height Alice can fall. Checked against her Y velocity
 
+    public float switchCasterOffsetY;
+    public float switchCasterLength;
+
+
+
+    public float geoCheckerOffsetX;
+    public float geoCheckerOffsety;
+    public float geoCheckerLength;
+
     public SwitchDetector _SD;
     public LayerMask ground;
 
@@ -52,25 +61,17 @@ public class PlayerController : BaseUnit
             return;
         }
 
-        if (Input.GetKey("left shift") || Input.GetKey("right shift"))
-        {
-
-            //Transform ground;
-            if (CanSwitch())
-            {
-                //Debug.Log("Try Switch");
-                SwitchWorld();
-            }
-        }
+        
 
         
         // AUDIO GOES HERE
+        /*
         if (step)
         {
             step = false;
             _AC.PlaySound();
         }
-        
+        */
 
         
         //calls the jump method
@@ -97,7 +98,7 @@ public class PlayerController : BaseUnit
         }
 
         
-
+        //Crawl
         if (Input.GetKeyDown(KeyCode.LeftControl) && IsGrounded())
         {
             if (!crawling)
@@ -131,18 +132,34 @@ public class PlayerController : BaseUnit
 	    Debug.DrawRay(pos2, Vector3.down*0.15f*worldMod, Color.green);
 
         //Switch Ray
-        Vector3 swiPos = new Vector3(transform.position.x, transform.position.y + 0.975f * -worldMod);
-	    Debug.DrawRay(swiPos, Vector3.down*10.0f*worldMod, Color.blue);
 	    
-	    Vector3 swiGround = new Vector3(transform.position.x, transform.position.y + 0.725f*-worldMod);
-	    Debug.DrawRay(swiGround, Vector3.down*0.2f*worldMod, Color.red);
-	}
+	    Vector3 geoCheckL = new Vector3(transform.position.x - geoCheckerOffsetX, transform.position.y + geoCheckerOffsety*-worldMod);
+        Vector3 geoCheckR = new Vector3(transform.position.x + geoCheckerOffsetX, transform.position.y + geoCheckerOffsety * -worldMod);
+        Vector3 geoCheckC = new Vector3(transform.position.x, transform.position.y + geoCheckerOffsety * -worldMod);
+
+        Debug.DrawRay(geoCheckL, Vector3.down * geoCheckerLength * worldMod, Color.red);
+        Debug.DrawRay(geoCheckR, Vector3.down * geoCheckerLength * worldMod, Color.red);
+        Debug.DrawRay(geoCheckC, Vector3.down * geoCheckerLength * worldMod, Color.red);
+
+        Vector3 swiCast = new Vector3(transform.position.x, transform.position.y + switchCasterOffsetY * -worldMod);
+        Debug.DrawRay(swiCast, Vector3.down*switchCasterLength*worldMod, Color.blue);
+    }
 
     private void FixedUpdate()
-    {        
-         
-         float h = Input.GetAxis("Horizontal");
-         MoveHoz(h);
+    {
+        if (Input.GetKey("left shift") || Input.GetKey("right shift"))
+        {
+
+            //Transform ground;
+            if (CanSwitch())
+            {
+                //Debug.Log("Try Switch");
+                SwitchWorld();
+            }
+        }
+
+        float h = Input.GetAxis("Horizontal");
+        MoveHoz(h);
                              
     }
 
@@ -155,33 +172,34 @@ public class PlayerController : BaseUnit
 
     private bool CanSwitch()
     {
+        //direction the raycasts fire in, based on what world Alice is in
         Vector2 dir = new Vector2(0, -worldMod);
 
-        Vector3 origin = new Vector3(transform.position.x, transform.position.y + 0.725f*-worldMod);
+        //
+        Vector3 swiCasterPos = new Vector3(transform.position.x, transform.position.y + switchCasterOffsetY * -worldMod);
 
-        /*
-        Vector3 oriLeft = new Vector3(transform.position.x - 0.5f, transform.position.y + 0.975f * -worldMod);
-        Vector3 oriRight = new Vector3(transform.position.x + 0.5f, transform.position.y + 0.975f * -worldMod);
-        */
-
-        RaycastHit2D hit = Physics2D.Raycast(origin, dir, 10.0f, ground);
-        //Vector3 newPos = new Vector3(hit.point.x, hit.point.y + 1.5f * worldMod);
-        _SD.transform.position = hit.point;
-        _SD.transform.localScale = new Vector3(1, worldMod, 1);
+        RaycastHit2D swiHit = Physics2D.Raycast(swiCasterPos, dir, switchCasterLength, ground);
 
         //Ensures that the player cannot switch and end up in some geo in the other world
-        /*
-        RaycastHit2D hitLeft = Physics2D.Raycast(oriLeft, dir, 5.0f);
-        RaycastHit2D hitRight = Physics2D.Raycast(oriRight, dir, 5.0f);
-        */
+        Vector3 geoCheckL = new Vector3(transform.position.x - geoCheckerOffsetX, transform.position.y + geoCheckerOffsety * -worldMod);
+        Vector3 geoCheckR = new Vector3(transform.position.x + geoCheckerOffsetX, transform.position.y + geoCheckerOffsety * -worldMod);
+        Vector3 geoCheckC = new Vector3(transform.position.x, transform.position.y + geoCheckerOffsety * -worldMod);
 
-        if (IsGrounded() && !_SD.IsColliding)
+        RaycastHit2D hitLeft = Physics2D.Raycast(geoCheckL, dir, geoCheckerLength);
+        RaycastHit2D hitRight = Physics2D.Raycast(geoCheckR, dir, geoCheckerLength);
+        RaycastHit2D hitCent = Physics2D.Raycast(geoCheckC, dir, geoCheckerLength);
+
+
+
+        if (swiHit.collider == null && hitLeft.collider == null && hitRight.collider == null)
         {
-            
+
             //ground = groundCaster.transform;
+            Debug.Log("True");
             return true;
         }
 
+        Debug.Log("False");
         return false;
     }
 
@@ -208,8 +226,7 @@ public class PlayerController : BaseUnit
             {
                 _SR.color = Color.white;
             }
-            */
-            
+            */            
 
             _RB.gravityScale *= -1; 
 

@@ -26,6 +26,9 @@ GameObject:
   - component: {fileID: 114654602832515186}
   - component: {fileID: 82907808366451334}
   - component: {fileID: 114806947472849562}
+  - component: {fileID: 82624901510935014}
+  - component: {fileID: 81826358098426446}
+  - component: {fileID: 114489383689265594}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -43,7 +46,6 @@ GameObject:
   - component: {fileID: 4118156535008810}
   - component: {fileID: 20898351849728732}
   - component: {fileID: 124384118103593354}
-  - component: {fileID: 81833576257180332}
   - component: {fileID: 114074326407276486}
   m_Layer: 0
   m_Name: Main Camera
@@ -59,7 +61,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1360890153970830}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.6666667, z: -6.666667}
+  m_LocalPosition: {x: 0, y: 0.6666665, z: -6.666667}
   m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 0.6666667}
   m_Children: []
   m_Father: {fileID: 4453354001100694}
@@ -72,7 +74,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1101810754104730}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -8.454564, y: -6.090872, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4118156535008810}
@@ -149,13 +151,93 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.5, y: 1.45}
   m_Direction: 0
---- !u!81 &81833576257180332
+--- !u!81 &81826358098426446
 AudioListener:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1360890153970830}
+  m_GameObject: {fileID: 1101810754104730}
   m_Enabled: 1
+--- !u!82 &82624901510935014
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1101810754104730}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!82 &82907808366451334
 AudioSource:
   m_ObjectHideFlags: 1
@@ -223,7 +305,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -266,6 +348,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoom: 1
   player: {fileID: 114654602832515186}
+--- !u!114 &114489383689265594
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1101810754104730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af157957307579748a35fef6b5ef5a02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomizedSounds:
+  - {fileID: 8300000, guid: bb9282e98dbe4bd418d4c05a5e8feaf9, type: 3}
 --- !u!114 &114654602832515186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -284,6 +379,11 @@ MonoBehaviour:
   jumpVert: 5
   jumpHoz: 4
   switchCoolTime: 2
+  switchCasterOffsetY: 0.73
+  switchCasterLength: 0.32
+  geoCheckerOffsetX: 0.22
+  geoCheckerOffsety: 0.79
+  geoCheckerLength: 1.49
   _SD: {fileID: 0}
   ground:
     serializedVersion: 2
