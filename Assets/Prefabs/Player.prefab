@@ -26,9 +26,9 @@ GameObject:
   - component: {fileID: 114654602832515186}
   - component: {fileID: 82907808366451334}
   - component: {fileID: 114806947472849562}
-  - component: {fileID: 82249566950042360}
-  - component: {fileID: 81904659541552864}
-  - component: {fileID: 114345888964578012}
+  - component: {fileID: 82624901510935014}
+  - component: {fileID: 81826358098426446}
+  - component: {fileID: 114489383689265594}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -61,7 +61,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1360890153970830}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.6666667, z: -6.666667}
+  m_LocalPosition: {x: 0, y: 0.6666665, z: -6.666667}
   m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 0.6666667}
   m_Children: []
   m_Father: {fileID: 4453354001100694}
@@ -73,8 +73,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1101810754104730}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.454564, y: -6.090872, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4118156535008810}
@@ -151,14 +151,14 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.5, y: 1.45}
   m_Direction: 0
---- !u!81 &81904659541552864
+--- !u!81 &81826358098426446
 AudioListener:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1101810754104730}
   m_Enabled: 1
---- !u!82 &82249566950042360
+--- !u!82 &82624901510935014
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -348,7 +348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoom: 1
   player: {fileID: 114654602832515186}
---- !u!114 &114345888964578012
+--- !u!114 &114489383689265594
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -379,6 +379,11 @@ MonoBehaviour:
   jumpVert: 5
   jumpHoz: 4
   switchCoolTime: 2
+  switchCasterOffsetY: 0.73
+  switchCasterLength: 0.32
+  geoCheckerOffsetX: 0.22
+  geoCheckerOffsety: 0.79
+  geoCheckerLength: 1.49
   _SD: {fileID: 0}
   ground:
     serializedVersion: 2
