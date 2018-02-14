@@ -20,16 +20,21 @@ public class EnemyController : BaseUnit
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        Vector3 origin = new Vector3(transform.position.x + 2.0f*dir, transform.position.y);
+        Vector3 origin = new Vector3(transform.position.x, transform.position.y);
         Vector2 direction = new Vector2(dir, 0);
-        RaycastHit2D hit = Physics2D.Raycast(origin, direction, 8.0f);
-        Debug.DrawRay(origin, new Vector3(dir, 0, 0), Color.blue);
+        RaycastHit2D hit = Physics2D.Raycast(origin, direction, 3.0f, LayerMask.GetMask("Player"));
+        Debug.DrawRay(origin, new Vector3(dir * 3, 0, 0), Color.blue);
 
-        if (hit.collider != null && !hit.collider.CompareTag("Player"))
+        if (hit.collider != null && hit.collider.CompareTag("Player"))
         {
             chase = true;
         }
         else
+        {
+            chase = false;
+        }
+        
+        if(chase == false)
         {
             if (transform.position.x > L_EnemyTurner.transform.position.x && transform.position.x > R_EnemyTurner.transform.position.x)
             {
