@@ -67,7 +67,7 @@ public class BaseUnit : MonoBehaviour {
         return false;
     }
 
-    /*
+    
     private void Update()
     {
         if(_RB.velocity.x < 0f || _RB.velocity.x > 0f)
@@ -76,7 +76,6 @@ public class BaseUnit : MonoBehaviour {
         
         }
     }
-    */
 
     public int WorldMod
     {
