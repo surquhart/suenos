@@ -1,23 +1,9 @@
 fileFormatVersion: 2
-guid: 979041447f14fcf47a3a6fb50f359c9c
-timeCreated: 1518568376
+guid: d9e36ebf4448da747b95fd09c2c90692
+timeCreated: 1518557113
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: sparkspirte copy_04
-    21300002: sparkspirte copy_05
-    21300004: sparkspirte copy_2
-    21300006: sparkspirte copy_3
-    21300008: sparkspirte copy_03
-    21300010: sparkspirte copy_06
-    21300012: sparkspirte copy_07
-    21300014: sparkspirte copy_02
-    21300016: sparkspirte copy_10
-    21300018: sparkspirte copy_08
-    21300020: sparkspirte copy_01
-    21300022: sparkspirte copy_13
-    21300024: sparkspirte copy_14
-    21300026: sparkspirte copy_00
+  fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -54,13 +40,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 450
+  spritePixelsToUnits: 100
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -79,213 +65,9 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-  - buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-  - buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-  - buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: sparkspirte copy_04
-      rect:
-        serializedVersion: 2
-        x: 2863
-        y: 0
-        width: 284
-        height: 2569
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sparkspirte copy_05
-      rect:
-        serializedVersion: 2
-        x: 3541
-        y: 0
-        width: 195
-        height: 2477
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sparkspirte copy_2
-      rect:
-        serializedVersion: 2
-        x: 4253
-        y: 2428
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sparkspirte copy_3
-      rect:
-        serializedVersion: 2
-        x: 4263
-        y: 2395
-        width: 11
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sparkspirte copy_03
-      rect:
-        serializedVersion: 2
-        x: 2193
-        y: 0
-        width: 266
-        height: 2065
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sparkspirte copy_06
-      rect:
-        serializedVersion: 2
-        x: 4156
-        y: 244
-        width: 185
-        height: 2140
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sparkspirte copy_07
-      rect:
-        serializedVersion: 2
-        x: 4815
-        y: 463
-        width: 146
-        height: 1802
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sparkspirte copy_02
-      rect:
-        serializedVersion: 2
-        x: 1610
-        y: 0
-        width: 151
-        height: 1327
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sparkspirte copy_10
-      rect:
-        serializedVersion: 2
-        x: 2448
-        y: 1154
-        width: 15
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sparkspirte copy_08
-      rect:
-        serializedVersion: 2
-        x: 5460
-        y: 461
-        width: 111
-        height: 1789
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sparkspirte copy_01
-      rect:
-        serializedVersion: 2
-        x: 868
-        y: 0
-        width: 127
-        height: 615
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sparkspirte copy_00
-      rect:
-        serializedVersion: 2
-        x: 152
-        y: 0
-        width: 94
-        height: 455
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
+    sprites: []
     outline: []
     physicsShape: []
   spritePackingTag: 
