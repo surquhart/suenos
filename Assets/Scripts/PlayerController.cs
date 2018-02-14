@@ -23,7 +23,7 @@ public class PlayerController : BaseUnit
     public float geoCheckerLength;
 
     public SwitchDetector _SD;
-    public LayerMask ground;
+    public LayerMask EverythingButPlayer_LayerMask;
 
     [HideInInspector]
     public float nextSwitch = 0.0f; //countdown for Alice to be able to switch again
@@ -178,7 +178,7 @@ public class PlayerController : BaseUnit
         //
         Vector3 swiCasterPos = new Vector3(transform.position.x, transform.position.y + switchCasterOffsetY * -worldMod);
 
-        RaycastHit2D swiHit = Physics2D.Raycast(swiCasterPos, dir, switchCasterLength, ground);
+        RaycastHit2D swiHit = Physics2D.Raycast(swiCasterPos, dir, switchCasterLength, EverythingButPlayer_LayerMask);
 
         //Ensures that the player cannot switch and end up in some geo in the other world
         Vector3 geoCheckL = new Vector3(transform.position.x - geoCheckerOffsetX, transform.position.y + geoCheckerOffsety * -worldMod);
