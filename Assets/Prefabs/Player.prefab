@@ -25,7 +25,6 @@ GameObject:
   - component: {fileID: 70566924744984264}
   - component: {fileID: 114654602832515186}
   - component: {fileID: 82907808366451334}
-  - component: {fileID: 114806947472849562}
   - component: {fileID: 81826358098426446}
   m_Layer: 12
   m_Name: Player
@@ -72,7 +71,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1101810754104730}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 82.8, y: 11.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4118156535008810}
@@ -165,8 +164,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 1ec15d3ed17177c488d6a578dfb1a69b, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
@@ -175,10 +174,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 50
+  MaxDistance: 100
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -205,7 +204,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -217,7 +216,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -298,20 +297,6 @@ MonoBehaviour:
     m_Bits: 4294951369
   nextSwitch: 0
   step: 0
---- !u!114 &114806947472849562
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1101810754104730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af157957307579748a35fef6b5ef5a02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  randomizedSounds:
-  - {fileID: 8300000, guid: bb9282e98dbe4bd418d4c05a5e8feaf9, type: 3}
-  - {fileID: 8300000, guid: d0cdba613999dcb45a430f3caebf304a, type: 3}
 --- !u!124 &124384118103593354
 Behaviour:
   m_ObjectHideFlags: 1

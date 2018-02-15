@@ -240,8 +240,7 @@ public class PlayerController : BaseUnit
             {
                 _SR.color = Color.white;
             }
-            */            
-
+            */
             _RB.gravityScale *= -1; 
 
             nextSwitch = Time.time + switchCoolTime; //cooldown before the switch ability can be used again.

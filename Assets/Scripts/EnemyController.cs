@@ -7,6 +7,8 @@ public class EnemyController : BaseUnit
     public GameObject L_EnemyTurner;
     public GameObject R_EnemyTurner;
 
+    public bool wait = false;
+
     private bool chase;
     private float dir;
 
@@ -46,6 +48,10 @@ public class EnemyController : BaseUnit
             }
         }
 
+        if (wait && !chase)
+        {
+            return;
+        }
         MoveHoz(dir);
 	}
 

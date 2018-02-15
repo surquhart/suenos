@@ -30,7 +30,7 @@ public class Steam : Interactable {
         }
         else
         {
-            if(!_AS.isPlaying)
+            if(_AS.isPlaying)
             {
                 _AS.Stop();
             }

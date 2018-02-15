@@ -87,8 +87,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1269195314740506}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.69, y: 12.304272, z: -2.3774228}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 38.48, y: 0.08, z: 0}
+  m_LocalScale: {x: 0.8206919, y: 0.820692, z: 0.820692}
   m_Children:
   - {fileID: 4829560851865986}
   - {fileID: 4676183998657604}
@@ -116,7 +116,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1888452273274578}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.43, y: 0, z: 0}
+  m_LocalPosition: {x: 6.23, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4405729412507782}
@@ -129,8 +129,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1324250032274862}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.79, z: 0}
-  m_LocalScale: {x: 2.14543, y: 2.14543, z: 1}
+  m_LocalPosition: {x: 0, y: 0.73, z: 0}
+  m_LocalScale: {x: 2.1454296, y: 2.1454296, z: 2.1454296}
   m_Children: []
   m_Father: {fileID: 4405729412507782}
   m_RootOrder: 0
@@ -330,10 +330,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   animSpeed: 2
-  rayCasterOffsetX: 0
+  rayCasterOffsetX: 0.2
   rayCasterOffsetY: 0
   L_EnemyTurner: {fileID: 1415410657117588}
   R_EnemyTurner: {fileID: 1888452273274578}
+  wait: 0
 --- !u!114 &114832627619539368
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -9,9 +9,11 @@ public class Door : Interactable{
 
     private Collider2D _CC;
     private SpriteRenderer _SR;
+    private AudioSource _AS;
 
     private void Awake()
     {
+        _AS = GetComponent<AudioSource>();
         _CC = GetComponent<Collider2D>();
         _SR = GetComponent<SpriteRenderer>();
     }
@@ -24,6 +26,8 @@ public class Door : Interactable{
                 if (!key.playerGot)
                     return;
             }
+
+            _AS.Play();
             _SR.sprite = OpenDoor;
             _CC.enabled = false;
     }

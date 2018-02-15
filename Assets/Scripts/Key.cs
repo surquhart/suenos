@@ -9,10 +9,13 @@ public class Key : Interactable {
     private SpriteRenderer _SR;
     private Collider2D _C;
 
+    private AudioSource _AS;
+
     private void Awake()
     {
         _C = GetComponent<Collider2D>();
         _SR = GetComponent<SpriteRenderer>();
+        _AS = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -22,6 +25,8 @@ public class Key : Interactable {
             _SR.enabled = false;
             _C.enabled = false;
             playerGot = true;
+            _AS.Play();
+
         }
     }
 }
