@@ -13,6 +13,15 @@ public class AudioController : MonoBehaviour {
         source = GetComponent<AudioSource>();
     }
 
+    public void PlayTargetSound(AudioClip sound)
+    {
+        if (!source.isPlaying)
+        {
+            source.clip = sound;
+            source.Play();
+        }
+    }
+
     public void PlaySound()
     {
         if (!source.isPlaying)

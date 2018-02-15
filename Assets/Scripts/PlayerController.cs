@@ -17,7 +17,7 @@ public class PlayerController : BaseUnit
     public float switchCasterLength;
     public float swiRange;
 
-
+    public AudioClip SwitchSound;
 
     public float geoCheckerOffsetX;
     public float geoCheckerOffsety;
@@ -225,6 +225,8 @@ public class PlayerController : BaseUnit
         {
             worldMod *= -1;
 
+            _AC.PlayTargetSound(SwitchSound);
+
             _RB.transform.localScale = new Vector3(_RB.transform.localScale.x, -(_RB.transform.localScale.y), _RB.transform.localScale.z);
 
             _RB.transform.position = new Vector3(_RB.transform.position.x, transform.position.y + worldMod*1.50f, _RB.transform.position.z); //Fix this.
@@ -241,6 +243,7 @@ public class PlayerController : BaseUnit
                 _SR.color = Color.white;
             }
             */
+            
             _RB.gravityScale *= -1; 
 
             nextSwitch = Time.time + switchCoolTime; //cooldown before the switch ability can be used again.
