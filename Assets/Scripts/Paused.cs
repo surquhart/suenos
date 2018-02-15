@@ -16,6 +16,20 @@ public class Paused : MonoBehaviour {
         StartCoroutine(SplitScreen(1));
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            UnPause();
+        }
+    }
+
+    public void UnPause()
+    {
+        StartCoroutine(SplitScreen(-1));
+    }
+
+    /*
     public void OnDisable()
     {
         //StartCoroutine(SplitScreen(-1));
@@ -24,6 +38,7 @@ public class Paused : MonoBehaviour {
         bottom.rectTransform.anchoredPosition = new Vector2(0, -161.5f);
         Time.timeScale = 1;
     }
+    */
 
     private IEnumerator SplitScreen(int dir)
     {
@@ -38,6 +53,11 @@ public class Paused : MonoBehaviour {
             bottom.rectTransform.anchoredPosition = bottomMove;
 
             yield return null;
+        }
+        if (dir < 0)
+        {
+            Time.timeScale = 1;
+            gameObject.SetActive(false);
         }
     }
 

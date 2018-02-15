@@ -1,14 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIController : MonoBehaviour {
-
-    public GameObject HUD;
+    
     public GameObject PauseMenu;
+
+    public Graphic _White;
+    public Graphic _End;
 
     public Camera mainCam;
     public RenderTexture scrShot;
+
+    private void Awake()
+    {
+        _White.CrossFadeAlpha(0, 0, true);
+        _End.CrossFadeAlpha(0, 0, true);
+    }
 
     private void Update()
     {
@@ -17,14 +26,13 @@ public class UIController : MonoBehaviour {
             GameController.GameOver();
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !PauseMenu.activeInHierarchy)
         {
             Pause();
         }
 
-        if (PauseMenu.activeInHierarchy == false && mainCam.targetTexture != null)
+        if (!PauseMenu.activeInHierarchy && mainCam.targetTexture != null)
         {
-            HUD.SetActive(true);
             mainCam.targetTexture = null;
         }
     }
@@ -33,7 +41,6 @@ public class UIController : MonoBehaviour {
     {
         mainCam = FindObjectOfType<Camera>();
         mainCam.targetTexture = scrShot;
-        HUD.SetActive(false);
         PauseMenu.SetActive(true);
     }
 }
