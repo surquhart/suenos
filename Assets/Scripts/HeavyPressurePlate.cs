@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HeavyPressurePlate : PressurePlate {
 
-    private void OnTriggerEnter2D(Collider2D other)
+    protected override void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Box"))
         {
@@ -16,7 +16,7 @@ public class HeavyPressurePlate : PressurePlate {
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    protected override void OnTriggerExit2D(Collider2D other)
     {
         if (active && other.CompareTag("Box"))
         {

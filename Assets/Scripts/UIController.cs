@@ -22,7 +22,7 @@ public class UIController : MonoBehaviour {
             Pause();
         }
 
-        if (!PauseMenu.activeInHierarchy == true && mainCam.targetTexture != null)
+        if (PauseMenu.activeInHierarchy == false && mainCam.targetTexture != null)
         {
             HUD.SetActive(true);
             mainCam.targetTexture = null;

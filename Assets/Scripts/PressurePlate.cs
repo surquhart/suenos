@@ -12,7 +12,7 @@ public class PressurePlate : Interactable
         _SR = GetComponent<SpriteRenderer>();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    protected virtual void OnTriggerEnter2D(Collider2D other)
 	{
         if (other.CompareTag("Player") || other.CompareTag("Box"))
         {
@@ -24,7 +24,7 @@ public class PressurePlate : Interactable
         }
 	}
 
-    private void OnTriggerExit2D(Collider2D other)
+    protected virtual void OnTriggerExit2D(Collider2D other)
     {
         if (active)
         {

@@ -15,7 +15,7 @@ public class Key : Interactable {
         _SR = GetComponent<SpriteRenderer>();
     }
     
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collision2D other)
     {
         if (other.collider.CompareTag("Player"))
         {

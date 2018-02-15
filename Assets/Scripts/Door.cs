@@ -5,19 +5,30 @@ using UnityEngine;
 public class Door : Interactable{
 
     public Key[] keys;
+    public Sprite OpenDoor;
 
     private Collider2D _CC;
+    private SpriteRenderer _SR;
 
     private void Awake()
     {
         _CC = GetComponent<Collider2D>();
+        _SR = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
-    void Update () {
-		if (keys[0].playerGot && keys[1].playerGot && keys[2].playerGot)
+    void OnTriggerStay2D(Collision2D other)
+    {
+        if (other.collider.CompareTag("Player"))
         {
+            foreach (Key key in keys)
+            {
+                if (!key.playerGot)
+                    return;
+            }
+            _SR.sprite = OpenDoor;
             _CC.enabled = false;
         }
+		
 	}
 }
