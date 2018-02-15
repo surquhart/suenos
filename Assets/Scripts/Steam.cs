@@ -8,21 +8,32 @@ public class Steam : Interactable {
     public PlayerController player;
 
     private Animator _AN;
+    private AudioSource _AS;
 
     private void Awake()
     {
         _AN = GetComponent<Animator>();
+        _AS = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update () {
 		if (!trigger.Active)
         {
+            if(!_AS.isPlaying)
+            {
+                _AS.Play();
+            }
             active = true;
             _AN.SetBool("Active", true);
+            
         }
         else
         {
+            if(!_AS.isPlaying)
+            {
+                _AS.Stop();
+            }
             active = false;
             _AN.SetBool("Active", false);
         }

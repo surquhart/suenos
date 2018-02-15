@@ -1,9 +1,19 @@
 fileFormatVersion: 2
 guid: a72bcd4ba5a3a6e49807cbd9c89fe73f
-timeCreated: 1518557109
+timeCreated: 1518646998
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: falling spirtes final_0
+    21300002: falling spirtes final_1
+    21300004: falling spirtes final_2
+    21300006: falling spirtes final_3
+    21300008: falling spirtes final_4
+    21300010: falling spirtes final_5
+    21300012: falling spirtes final_6
+    21300014: falling spirtes final_7
+    21300016: falling spirtes final_8
+    21300018: falling spirtes final_18
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -40,13 +50,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 900
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -65,9 +75,185 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: falling spirtes final_0
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 2
+        width: 477
+        height: 1334
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: falling spirtes final_1
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 22
+        width: 628
+        height: 1293
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: falling spirtes final_2
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 31
+        width: 681
+        height: 1272
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: falling spirtes final_3
+      rect:
+        serializedVersion: 2
+        x: 2523
+        y: 39
+        width: 742
+        height: 1060
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: falling spirtes final_4
+      rect:
+        serializedVersion: 2
+        x: 3477
+        y: 47
+        width: 689
+        height: 922
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: falling spirtes final_5
+      rect:
+        serializedVersion: 2
+        x: 4542
+        y: 47
+        width: 546
+        height: 979
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: falling spirtes final_6
+      rect:
+        serializedVersion: 2
+        x: 5333
+        y: 47
+        width: 603
+        height: 950
+      alignment: 9
+      pivot: {x: 0.46566322, y: 0.2}
+      border: {x: 0, y: 0, z: 110, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: falling spirtes final_7
+      rect:
+        serializedVersion: 2
+        x: 6304
+        y: 47
+        width: 625
+        height: 942
+      alignment: 9
+      pivot: {x: 0.45771486, y: 0.2}
+      border: {x: 0, y: 0, z: 136, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: falling spirtes final_8
+      rect:
+        serializedVersion: 2
+        x: 7340
+        y: 47
+        width: 611
+        height: 942
+      alignment: 9
+      pivot: {x: 0.47746715, y: 0.2}
+      border: {x: 0, y: 0, z: 115, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: falling spirtes final_18
+      rect:
+        serializedVersion: 2
+        x: 4517
+        y: 504
+        width: 12
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 

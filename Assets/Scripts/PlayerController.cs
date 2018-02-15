@@ -15,6 +15,7 @@ public class PlayerController : BaseUnit
 
     public float switchCasterOffsetY;
     public float switchCasterLength;
+    public float swiRange;
 
 
 
@@ -22,8 +23,9 @@ public class PlayerController : BaseUnit
     public float geoCheckerOffsety;
     public float geoCheckerLength;
 
-    public SwitchDetector _SD;
-    public LayerMask EverythingButPlayer_LayerMask;
+    //public SwitchDetector _SD;
+    public LayerMask Rift; //Detects whether Alice is above the Rift
+    public LayerMask Obstructions; //Checks for obstructions in the other world.
 
     [HideInInspector]
     public float nextSwitch = 0.0f; //countdown for Alice to be able to switch again
@@ -135,11 +137,11 @@ public class PlayerController : BaseUnit
 	    
 	    Vector3 geoCheckL = new Vector3(transform.position.x - geoCheckerOffsetX, transform.position.y + geoCheckerOffsety*-worldMod);
         Vector3 geoCheckR = new Vector3(transform.position.x + geoCheckerOffsetX, transform.position.y + geoCheckerOffsety * -worldMod);
-        Vector3 geoCheckC = new Vector3(transform.position.x, transform.position.y + geoCheckerOffsety * -worldMod);
+        //Vector3 geoCheckC = new Vector3(transform.position.x, transform.position.y + geoCheckerOffsety * -worldMod);
 
         Debug.DrawRay(geoCheckL, Vector3.down * geoCheckerLength * worldMod, Color.red);
         Debug.DrawRay(geoCheckR, Vector3.down * geoCheckerLength * worldMod, Color.red);
-        Debug.DrawRay(geoCheckC, Vector3.down * geoCheckerLength * worldMod, Color.red);
+        //Debug.DrawRay(geoCheckC, Vector3.down * geoCheckerLength * worldMod, Color.red);
 
         Vector3 swiCast = new Vector3(transform.position.x, transform.position.y + switchCasterOffsetY * -worldMod);
         Debug.DrawRay(swiCast, Vector3.down*switchCasterLength*worldMod, Color.blue);
@@ -178,20 +180,32 @@ public class PlayerController : BaseUnit
         //
         Vector3 swiCasterPos = new Vector3(transform.position.x, transform.position.y + switchCasterOffsetY * -worldMod);
 
-        RaycastHit2D swiHit = Physics2D.Raycast(swiCasterPos, dir, switchCasterLength, EverythingButPlayer_LayerMask);
+        RaycastHit2D swiHit = Physics2D.Raycast(swiCasterPos, dir, switchCasterLength, Rift);
 
         //Ensures that the player cannot switch and end up in some geo in the other world
         Vector3 geoCheckL = new Vector3(transform.position.x - geoCheckerOffsetX, transform.position.y + geoCheckerOffsety * -worldMod);
         Vector3 geoCheckR = new Vector3(transform.position.x + geoCheckerOffsetX, transform.position.y + geoCheckerOffsety * -worldMod);
-        Vector3 geoCheckC = new Vector3(transform.position.x, transform.position.y + geoCheckerOffsety * -worldMod);
+        //Vector3 geoCheckC = new Vector3(transform.position.x, transform.position.y + geoCheckerOffsety * -worldMod);
 
-        RaycastHit2D hitLeft = Physics2D.Raycast(geoCheckL, dir, geoCheckerLength);
-        RaycastHit2D hitRight = Physics2D.Raycast(geoCheckR, dir, geoCheckerLength);
-        RaycastHit2D hitCent = Physics2D.Raycast(geoCheckC, dir, geoCheckerLength);
+        RaycastHit2D hitLeft = Physics2D.Raycast(geoCheckL, dir, geoCheckerLength, Obstructions);
+        RaycastHit2D hitRight = Physics2D.Raycast(geoCheckR, dir, geoCheckerLength, Obstructions);
+        //RaycastHit2D hitCent = Physics2D.Raycast(geoCheckC, dir, geoCheckerLength);
 
+        if (swiHit.collider != null)
+        {
+            Debug.Log("SWI HIT!");               
+        }
+        Debug.Log("swiHit.distance = " + swiHit.distance); 
 
+        if (hitLeft.collider != null){
+            Debug.Log("Left HIT!");
+        }
 
-        if (swiHit.collider == null && hitLeft.collider == null && hitRight.collider == null)
+        if (hitRight.collider != null){
+            Debug.Log("Right HIT!");
+        }
+
+        if ((swiHit.collider != null && Mathf.Abs(swiHit.distance) <= swiRange) && (hitLeft.collider == null && hitRight.collider == null))
         {
 
             //ground = groundCaster.transform;
@@ -213,7 +227,7 @@ public class PlayerController : BaseUnit
 
             _RB.transform.localScale = new Vector3(_RB.transform.localScale.x, -(_RB.transform.localScale.y), _RB.transform.localScale.z);
 
-            _RB.transform.position = new Vector3(_RB.transform.position.x, transform.position.y + worldMod*1.25f, _RB.transform.position.z); //Fix this.
+            _RB.transform.position = new Vector3(_RB.transform.position.x, transform.position.y + worldMod*1.50f, _RB.transform.position.z); //Fix this.
 
             //_RB.velocity = new Vector2(_RB.velocity.x, -(_RB.velocity.y));
 
@@ -263,6 +277,7 @@ public class PlayerController : BaseUnit
     public void Die()
     {
         isAlive = false;
+        _AN.SetBool("Alive", IsAlive);
         GameController.GameOver();
     }
 
