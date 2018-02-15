@@ -14,8 +14,8 @@ public class Key : Interactable {
         _C = GetComponent<Collider2D>();
         _SR = GetComponent<SpriteRenderer>();
     }
-    
-    private void OnTriggerEnter2D(Collision2D other)
+
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.collider.CompareTag("Player"))
         {
@@ -24,5 +24,4 @@ public class Key : Interactable {
             playerGot = true;
         }
     }
-    
 }
