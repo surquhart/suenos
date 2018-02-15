@@ -17,18 +17,14 @@ public class Door : Interactable{
     }
 
     // Update is called once per frame
-    void OnTriggerStay2D(Collision2D other)
+    void Update()
     {
-        if (other.collider.CompareTag("Player"))
-        {
-            foreach (Key key in keys)
+        foreach (Key key in keys)
             {
                 if (!key.playerGot)
                     return;
             }
             _SR.sprite = OpenDoor;
             _CC.enabled = false;
-        }
-		
-	}
+    }       
 }

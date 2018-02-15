@@ -193,8 +193,9 @@ public class PlayerController : BaseUnit
 
         if (swiHit.collider != null)
         {
-            Debug.Log("swiHit.distance = " + swiHit.distance);            
+            Debug.Log("SWI HIT!");               
         }
+        Debug.Log("swiHit.distance = " + swiHit.distance); 
 
         if (hitLeft.collider != null){
             Debug.Log("Left HIT!");
@@ -226,7 +227,7 @@ public class PlayerController : BaseUnit
 
             _RB.transform.localScale = new Vector3(_RB.transform.localScale.x, -(_RB.transform.localScale.y), _RB.transform.localScale.z);
 
-            _RB.transform.position = new Vector3(_RB.transform.position.x, transform.position.y + worldMod*1.25f, _RB.transform.position.z); //Fix this.
+            _RB.transform.position = new Vector3(_RB.transform.position.x, transform.position.y + worldMod*1.50f, _RB.transform.position.z); //Fix this.
 
             //_RB.velocity = new Vector2(_RB.velocity.x, -(_RB.velocity.y));
 
